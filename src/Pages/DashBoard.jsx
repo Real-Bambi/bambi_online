@@ -1,5 +1,5 @@
 export default function DashBoard () {
     <div>
-        This is the DashBoard page
+        This is the DashBoard pages
     </div>
 }
