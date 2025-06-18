@@ -1,5 +1,7 @@
 export default function Product () {
-    <div>
+   return(
+     <div>
         This is the View Product Page
     </div>
+   )
 }
