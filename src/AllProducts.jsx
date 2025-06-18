@@ -1,5 +1,7 @@
 export default function AllProducts () {
-    <div>
+   return(
+     <div>
         This is the All products
     </div>
+   )
 }

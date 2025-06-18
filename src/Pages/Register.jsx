@@ -1,5 +1,7 @@
 export default function Register () {
-    <div>
+   return(
+     <div>
         This is the Register
     </div>
+   )
 }
