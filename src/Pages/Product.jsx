@@ -1,7 +1,9 @@
+import Footer from "../components/Footer"
+
 export default function Product () {
    return(
      <div>
-        This is the View Product Page
+        <Footer/>
     </div>
    )
 }
