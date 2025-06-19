@@ -5,6 +5,7 @@ import Register from "./Pages/Register";
 import Product from "./Pages/Product";
 import DashBoard from "./Pages/DashBoard";
 import AllProducts from "./AllProducts";
+import Fashion from "./Pages/categories/Fashion";
 
 
 const onlineRouter = createBrowserRouter([
@@ -13,7 +14,8 @@ const onlineRouter = createBrowserRouter([
   {path:'/register', element: <Register />},    
   {path:'/product', element: <Product />},
   {path:'/dashboard', element: <DashBoard />},
-  {path:'/allproducts', element: <AllProducts />}
+  {path:'/allproducts', element: <AllProducts />},
+  {path:'/fashion', element:<Fashion />}
 ])
 function App() {
 
