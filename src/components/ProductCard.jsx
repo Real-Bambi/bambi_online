@@ -15,14 +15,18 @@ export default function ProductCard() {
     }
 
     return (
-        <div className='shadow-md md:w-60 bg-white rounded p-6 relative'>
+        <div className='shadow-md  mx-auto md:w-full bg-white rounded p-6 relative'>
             <img src={InitialCard} alt="burger image" className='size-56 rounded-3xl' />
             <span className='pt-4'>
 
                 <h1>Burger</h1>
                 <div className='flex flex-row justify-between pt-2 '>
                     <p className='font-bold'>Ghc 10.99</p>
-                    <Plus className='bg-amber-600 rounded p-1 ' />
+                 <div>
+                       <Plus className='bg-amber-600 rounded p-1 ' />
+                       <div></div>
+                 </div>
+                    
                 </div>
                 <div className='flex'>
                     {[...Array(5)].map((_, i) => (

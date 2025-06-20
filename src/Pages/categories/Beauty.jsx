@@ -2,8 +2,11 @@ import Category from "../../components/Category"
 
 export default function Beauty () {
     return(
-       <div className=" flex items-center justify-center">
+       <div>
+        <h1 className="text-3xl font-bold">Beauty and Care</h1>
+        <div className=" flex items-center justify-center">
          <Category />
+       </div>
        </div>
     )
 }
