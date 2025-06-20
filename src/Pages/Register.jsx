@@ -1,12 +1,12 @@
 import { Link } from "react-router";
-import { Facebook } from "lucide-react";
+import { Facebook, User, Store } from "lucide-react";
 import Signup from "../assets/images/signup.png";
 
 export default function Register() {
   return (
     <div className="flex flex-col md:flex-row w-full min-h-screen">
       
-      <div className="w-full md:w-1/2 h-64 md:h-auto">
+      <div className="md:w-[50%] h-64 md:h-auto">
         <img
           src={Signup}
           alt="Signup"
@@ -15,14 +15,14 @@ export default function Register() {
       </div>
 
       
-      {/* Right Form Section */}
+    
 <div className="w-full md:w-1/2 px-6 sm:px-10 py-10 flex flex-col justify-center">
   <div className="max-w-md w-full mx-auto">
     <h1 className="font-bold text-3xl md:text-4xl text-center md:text-left mb-6">
       Create Account
     </h1>
 
-    {/* Social Buttons */}
+   
     <div className="flex flex-col sm:flex-row gap-4 font-bold mb-4">
       <Link to="">
         <button className="w-full bg-purple-800 text-white px-6 py-2 rounded-3xl">
@@ -39,11 +39,33 @@ export default function Register() {
     </div>
 
     <hr className="my-4" />
-    <p className="text-sm text-gray-500 mb-4 text-center md:text-left">
+
+    <h1 className="text-3xl md:text-xl font-bold mb-6 text-center">
+        Select Your Role
+      </h1>
+
+      <div className="flex flex-col md:flex-row gap-6 w-full max-w-xl">
+        
+        <button
+          className="flex-1 bg-white hover:bg-purple-100 border-2 border-purple-400 rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300"
+        >
+          <User className="w-10 h-10 text-purple-600 mb-2" />
+          <span className="text-lg font-semibold">User</span>
+        </button>
+
+        
+        <button
+          className="flex-1 bg-white hover:bg-pink-100 border-2 border-pink-400 rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300"
+        >
+          <Store className="w-10 h-10 text-pink-600 mb-2" />
+          <span className="text-lg font-semibold">Vendor</span>
+        </button>
+      </div>
+    <p className="text-sm text-gray-500 mb-4 mt-4 text-center md:text-left">
       Or sign up using your email address
     </p>
 
-    {/* FORM STARTS HERE */}
+   
     <form className="space-y-4">
       <div className="flex flex-col">
         <label className="font-bold">Name</label>
