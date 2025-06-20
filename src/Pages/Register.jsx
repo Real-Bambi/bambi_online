@@ -1,12 +1,20 @@
 import { Link } from "react-router";
 import { Facebook, User, Store } from "lucide-react";
 import Signup from "../assets/images/signup.png";
+import { useState } from "react";
 
 export default function Register() {
+
+   const [selectedRole, setSelectedRole] = useState("");
+
+  const handleSelect = (role) => {
+    setSelectedRole(role);
+  };
+
   return (
     <div className="flex flex-col md:flex-row w-full min-h-screen">
       
-      <div className="md:w-[50%] h-64 md:h-auto">
+      <div className="md:w-1/2 h-64 md:h-auto">
         <img
           src={Signup}
           alt="Signup"
@@ -47,6 +55,7 @@ export default function Register() {
       <div className="flex flex-col md:flex-row gap-6 w-full max-w-xl">
         
         <button
+         onClick={() => handleSelect("user")}
           className="flex-1 bg-white hover:bg-purple-100 border-2 border-purple-400 rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300"
         >
           <User className="w-10 h-10 text-purple-600 mb-2" />
@@ -55,6 +64,7 @@ export default function Register() {
 
         
         <button
+         onClick={() => handleSelect("vendor")}
           className="flex-1 bg-white hover:bg-pink-100 border-2 border-pink-400 rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300"
         >
           <Store className="w-10 h-10 text-pink-600 mb-2" />
@@ -76,7 +86,7 @@ export default function Register() {
       </div>
 
       <div className="flex flex-col">
-        <label className="font-bold">Email or Phone no.</label>
+        <label className="font-bold">Email</label>
         <input
           type="text"
           className="bg-purple-100 rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 border-0"
@@ -93,6 +103,14 @@ export default function Register() {
 
       <div className="flex flex-col">
         <label className="font-bold">Password</label>
+        <input
+          type="password"
+          className="bg-purple-100 rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 border-0"
+        />
+      </div>
+
+      <div className="flex flex-col">
+        <label className="font-bold">Confirm Password</label>
         <input
           type="password"
           className="bg-purple-100 rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 border-0"
