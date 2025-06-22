@@ -77,7 +77,7 @@ export default function Register() {
                      <label className="font-bold">Password</label>
                      <input type={showPassword ? "text" : "password"} className="bg-[#eaf3fa] rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-[#B2C6D5] border-0" />
 
-                     <div className="absolute right-35 mt-12 transform -translate-y-1/2 cursor-pointer text-gray-400 " onClick={() => setShowPassword(!showPassword)} >
+                     <div className="absolute right-[140px] mt-12 transform -translate-y-1/2 cursor-pointer text-gray-400 " onClick={() => setShowPassword(!showPassword)} >
                         {showPassword ? <EyeOff size={20} /> : <Eye size={25} />}
                      </div>
 
@@ -87,7 +87,7 @@ export default function Register() {
                      <label className="font-bold">Confirm Password</label>
                      <input type={showPassword ? "text" : "password"} className="bg-[#eaf3fa] rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-[#B2C6D5] border-0" />
 
-                     <div className="absolute right-35 mt-12 transform -translate-y-1/2 cursor-pointer text-gray-400 " onClick={() => setShowPassword(!showPassword)} >
+                     <div className="absolute right-[140px] mt-12 transform -translate-y-1/2 cursor-pointer text-gray-400 " onClick={() => setShowPassword(!showPassword)} >
                         {showPassword ? <EyeOff size={20} /> : <Eye size={25} />}
                      </div>
 
