@@ -1,32 +1,33 @@
 import InitialCard from '../assets/images/initial-product.jpg';
-import { Plus, Star } from 'lucide-react';
+import { Plus, Star, Heart } from 'lucide-react';
+import { useState } from 'react';
+
 
 
 
 
 
 export default function ProductCard() {
-   
+    const [liked, setLiked] = useState(false);
 
-    function likeBtn() {
-        const heart = document.getElementById('heart');
-        heart.classList.toggle('text-red-500'); // Adds/removes red
-        heart.classList.toggle('text-black');   // Adds/removes black
-    }
+
 
     return (
-        <div className='shadow-md  mx-auto md:w-full bg-white rounded p-6 relative transform hover:scale-[1.20] transition '>
+        <div onDoubleClick={() => setLiked(!liked)} className='shadow-md  mx-auto  w-full bg-white rounded p-4 md:p-6 relative  transform hover:scale-[1.15] transition  '>
             <img src={InitialCard} alt="burger image" className='size-56 rounded-3xl' />
-            <span className='pt-4'>
+            <span className= 'pt-2 md:pt-4'>
 
                 <h1>Burger</h1>
                 <div className='flex flex-row justify-between pt-2 '>
                     <p className='font-bold'>Ghc 10.99</p>
-                 <div>
-                       <Plus className='bg-orangelight rounded p-1 ' />
-                       <div></div>
-                 </div>
-                    
+                    <div className='relative group'>
+                        <Plus className='cursor-pointer bg-orangelight rounded p-1 ' />    
+                    <div className="absolute top-7 mb-2 left-1/2 transform -translate-x-1/2 bg-bluelight text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none z-10 whitespace-nowrap">
+                        Add to cart
+                    </div>
+
+                    </div>
+
                 </div>
                 <div className='flex'>
                     {[...Array(5)].map((_, i) => (
@@ -35,10 +36,11 @@ export default function ProductCard() {
                 </div>
                 <span
                     id="heart"
-                    onClick={likeBtn}
-                    className="cursor-pointer absolute top-2 right-2 text-black"
+
+                    className={`absolute text-sm md:text-2xl top-2 right-2 cursor-pointer ${liked ? 'text-red-500' : 'text-black'}`}
+
                 >
-                    ♥
+                    {liked ? '♥' : '♡'}
                 </span>
 
             </span>

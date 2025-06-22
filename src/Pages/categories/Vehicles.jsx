@@ -13,10 +13,10 @@ export default function Vehicles() {
       <div id="navbar">
         <Navbar />
       </div>
-      <div className="p-4">
-        <div className=" w-full h-64 md:h-[400px] bg- ">
-          <video ref={videoRef} src={AutoVideo} autoPlay muted playsInline loop className="  w-full h-full object-cover" />
-          <h1 className=" p-4 absolute top-50 text-white  text-8xl font-bold pt-16 ">AutoMobiles</h1>
+      <div className="p-2 md:p-4">
+        <div className="w-full h-64 md:h-[400px] bg- ">
+          <video ref={videoRef} src={AutoVideo} autoPlay muted playsInline loop className=" w-full h-full object-cover" />
+          <h1 className="p-2 md:p-4 absolute top-40 md:top-50 text-white text-2xl md:text-8xl font-bold pt-16 ">AutoMobiles</h1>
         </div>
 
 
