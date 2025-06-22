@@ -15,7 +15,7 @@ export default function ProductCard() {
     }
 
     return (
-        <div className='shadow-md  mx-auto md:w-full bg-white rounded p-6 relative'>
+        <div className='shadow-md  mx-auto md:w-full bg-white rounded p-6 relative transform hover:scale-[1.20] transition '>
             <img src={InitialCard} alt="burger image" className='size-56 rounded-3xl' />
             <span className='pt-4'>
 
@@ -23,7 +23,7 @@ export default function ProductCard() {
                 <div className='flex flex-row justify-between pt-2 '>
                     <p className='font-bold'>Ghc 10.99</p>
                  <div>
-                       <Plus className='bg-amber-600 rounded p-1 ' />
+                       <Plus className='bg-orangelight rounded p-1 ' />
                        <div></div>
                  </div>
                     

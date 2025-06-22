@@ -13,6 +13,7 @@ import Beauty from "./Pages/categories/Beauty";
 import Animals from "./Pages/categories/Animals";
 
 
+
 const onlineRouter = createBrowserRouter([
   {path:'/', element: <Home />},
   {path:'/login', element: <Login />},
@@ -25,7 +26,8 @@ const onlineRouter = createBrowserRouter([
   {path:'/goods', element:<Goods />},
   {path:'/Equipment', element:<Equipment />},
   {path:'/beauty', element:<Beauty />},
-  {path:'/animals', element:<Animals />}
+  {path:'/animals', element:<Animals />},
+  
 ])
 function App() {
 
