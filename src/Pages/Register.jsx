@@ -1,11 +1,10 @@
 import { Link } from "react-router";
-import { Facebook, User, Store } from "lucide-react";
+import { Facebook, User, Store, Eye, EyeOff } from "lucide-react";
 import Signup from "../assets/images/signup.png";
 import { useState } from "react";
 
 export default function Register() {
-
-   const [selectedRole, setSelectedRole] = useState("");
+   const [showPassword, setShowPassword] = useState(false);
 
    const handleSelect = (role) => {
       setSelectedRole(role);
@@ -26,11 +25,11 @@ export default function Register() {
 
 
                <div className="flex flex-col sm:flex-row gap-4 font-bold mb-4">
-                  <Link to=""><button className="w-full bg-purple-800 text-white px-6 py-2 rounded-3xl">Sign up with Google
+                  <Link to=""><button className="w-full bg-[#FE5D26] text-white px-6 py-2 cursor-pointer rounded-3xl">Sign up with Google
                   </button>
                   </Link>
 
-                  <Link to=""><button className="w-full bg-purple-200 flex justify-center items-center gap-2 px-6 py-2 rounded-3xl text-black"><Facebook className="w-4 h-4" /> with Facebook
+                  <Link to=""><button className="w-full bg-[#B2C6D5] flex justify-center cursor-pointer items-center gap-2 px-6 py-2 rounded-3xl text-black"><Facebook className="w-4 h-4" /> with Facebook
                   </button>
                   </Link>
                </div>
@@ -41,15 +40,15 @@ export default function Register() {
 
                <div className="flex flex-col md:flex-row gap-6 w-full max-w-xl">
                   <button onClick={() => handleSelect("user")}
-                     className="flex-1 bg-white hover:bg-purple-100 border-2 border-purple-400 rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300" >
-                     <User className="w-10 h-10 text-purple-600 mb-2" />
+                     className="flex-1 bg-white hover:bg-[#eaf3fa] cursor-pointer border-2 border-[#B2C6D5] rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300" >
+                     <User className="w-10 h-10 text-[#a4b8c7] mb-2" />
                      <span className="text-lg font-semibold">User</span>
                   </button>
 
 
                   <button onClick={() => handleSelect("vendor")}
-                     className="flex-1 bg-white hover:bg-pink-100 border-2 border-pink-400 rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300" >
-                     <Store className="w-10 h-10 text-pink-600 mb-2" />
+                     className="flex-1 bg-white hover:bg-orange-100 cursor-pointer border-2 border-[#FE5D26] rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300" >
+                     <Store className="w-10 h-10 text-[#FE5D26] mb-2" />
                      <span className="text-lg font-semibold">Vendor</span>
                   </button>
 
@@ -61,27 +60,37 @@ export default function Register() {
                <form className="space-y-4">
                   <div className="flex flex-col">
                      <label className="font-bold">Name</label>
-                     <input type="text" className="bg-purple-100 rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 border-0" />
+                     <input type="text" className="bg-[#eaf3fa] rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-[#B2C6D5] border-0" />
                   </div>
 
                   <div className="flex flex-col">
                      <label className="font-bold">Email</label>
-                     <input type="text" className="bg-purple-100 rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 border-0" />
+                     <input type="text" className="bg-[#eaf3fa] rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-[#B2C6D5] border-0" />
                   </div>
 
                   <div className="flex flex-col">
                      <label className="font-bold">Username</label>
-                     <input type="text" className="bg-purple-100 rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 border-0" />
+                     <input type="text" className="bg-[#eaf3fa] rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-[#B2C6D5] border-0" />
                   </div>
 
                   <div className="flex flex-col">
                      <label className="font-bold">Password</label>
-                     <input type="password" className="bg-purple-100 rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 border-0" />
+                     <input type={showPassword ? "text" : "password"} className="bg-[#eaf3fa] rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-[#B2C6D5] border-0" />
+
+                     <div className="absolute right-35 mt-12 transform -translate-y-1/2 cursor-pointer text-gray-400 " onClick={() => setShowPassword(!showPassword)} >
+                        {showPassword ? <EyeOff size={20} /> : <Eye size={25} />}
+                     </div>
+
                   </div>
 
                   <div className="flex flex-col">
                      <label className="font-bold">Confirm Password</label>
-                     <input type="password" className="bg-purple-100 rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 border-0" />
+                     <input type={showPassword ? "text" : "password"} className="bg-[#eaf3fa] rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-[#B2C6D5] border-0" />
+
+                     <div className="absolute right-35 mt-12 transform -translate-y-1/2 cursor-pointer text-gray-400 " onClick={() => setShowPassword(!showPassword)} >
+                        {showPassword ? <EyeOff size={20} /> : <Eye size={25} />}
+                     </div>
+
                   </div>
 
                   <div className="text-sm font-semibold mt-4 flex items-center">
@@ -89,7 +98,7 @@ export default function Register() {
                      <label htmlFor="agree" className="ml-2">I agree to the terms and conditions</label>
                   </div>
 
-                  <Link to=""><button className="w-full bg-purple-950 text-white font-bold py-3 rounded-3xl mt-2">Sign up
+                  <Link to=""><button className="w-full bg-[#FE5D26] text-white font-bold py-3 hover:bg-orange-500 cursor-pointer rounded-3xl mt-2">Sign up
                   </button>
                   </Link>
 
