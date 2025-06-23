@@ -1,7 +1,14 @@
+import ProductCard from "../components/ProductCard"
+import Footer from "../components/Footer"
+import Navbar from "../components/Navbar"
+import SideBar from "../components/SideBar"
+
 export default function Product () {
    return(
-     <div>
-        This is the View Product Page
+     <div className="">
+
+     <Footer></Footer>
+    
     </div>
    )
 }
