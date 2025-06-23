@@ -1,6 +1,7 @@
 import cart from "../assets/images/cart.gif"
 import account from "../assets/images/account.png"
 import logo from "../assets/images/logo2.png"
+import { Link } from "react-router"
 
 export default function Navbar() {
     return (
@@ -9,19 +10,19 @@ export default function Navbar() {
             <div className="flex flex-wrap justify-between items-center gap-4">
                 {/* Logo */}
                 <div>
-                    <img src={logo} alt="BambiOnline Logo" className="h-15 w-auto" />
+                   <Link to="/"><img src={logo} alt="BambiOnline Logo" className="h-15 w-auto" /></Link> 
                 </div>
 
                 {/* Search Section with Category Dropdown */}
                 <div className="flex-1 hidden md:flex items-center gap-2 mx-6">
                     <select className="bg-white border border-[#fe5d26] text-black text-sm px-3 py-2 rounded-md">
-                        <option>Electronics</option>
-                        <option>Fashion</option>
-                        <option>Home & Kitchen</option>
-                        <option>Beauty</option>
-                        <option>Sports</option>
-                        <option>Books</option>
-                        <option>Gadgets</option>
+                        <option disabled select>All</option>
+                        <Link to="/fashion"><option>Fashion</option></Link>
+                         <Link to="/fashion"><option>Home & Kitchen</option></Link>
+                         <Link to="/fashion"><option>Beauty</option></Link>
+                         <Link to="/fashion"><option>Sports</option></Link>
+                         <Link to="/fashion"><option>Books</option></Link>
+                         <Link to="/fashion"><option>Gadgets</option></Link>
                     </select>
                     <form className="flex flex-1 gap-0">
                         <input
@@ -64,8 +65,8 @@ export default function Navbar() {
                             id="authDropdown"
                             className="absolute hidden bg-white text-black right-0 mt-1 w-32 rounded shadow-lg overflow-hidden z-50"
                         >
-                            <a href="#" className="block px-4 py-2 hover:bg-gray-100">Login</a>
-                            <a href="#" className="block px-4 py-2 hover:bg-gray-100">Sign Up</a>
+                            <Link to="/login" className="block px-4 py-2 hover:bg-gray-100">Login</Link>
+                            <Link to="register" className="block px-4 py-2 hover:bg-gray-100">Register</Link>
                         </div>
                     </div>
                 </div>
