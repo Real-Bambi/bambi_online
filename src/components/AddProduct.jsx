@@ -1,9 +1,9 @@
 
 
-export default function Footer () {
+export default function AddProduct () {
 
 <>
- <form action={postBook} className="bg-white p-8 rounded-lg shadow-md border border-gray-300  py-6 px-10 flex flex-col">
+ <form className="bg-white p-8 rounded-lg shadow-md border border-gray-300  py-6 px-10 flex flex-col">
                             <div className="text-3xl font-bold m-auto"><h1>Fill Up Book Details</h1></div>
 
                             <div className="flex flex-col p-4 ">
