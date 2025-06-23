@@ -8,7 +8,7 @@ const[search, setSearch] = useState();
   return(
       <>
       <SideBar/>
-      <div className="my-5 mx-5">
+      <div className="my-5 ml-[27%] w-[70%] ">
         <p className="text-4xl font-bold pb-5">Manage Products</p>
         <button className="border bg-amber-500 rounded-2xl px-4 py-2 mb-5 ">Add Product</button>
         <div className="flex flex-row justify-between pb-5">
@@ -35,7 +35,7 @@ const[search, setSearch] = useState();
         </div>
       </div>
       
-       <table className="w-full table-auto border rounded">
+       <table className=" table-auto border rounded ml-[27%] w-[70%] ">
         <thead className="bg-gray-100">
           <tr className="text-left">
             <th className="p-3"><input type="checkbox" /></th>
