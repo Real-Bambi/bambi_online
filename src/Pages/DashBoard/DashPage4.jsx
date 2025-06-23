@@ -164,10 +164,10 @@ export default function DashBoard() {
         </div>
 
         <div className="flex flex-col pb-6">
-          <p className="font-bold text-3xl text-center">You Might Like</p>
+          <p className="font-bold text-3xl text-center">You Might Also Like</p>
           <div>
 
-            <div className="grid grid-cols-2 gap-5 ">
+            <div className="grid grid-cols-3 gap-5 ">
                 {[1,2,3,4,5,6].map(n => <ProductCard key={n} />)}
             </div>
           </div>

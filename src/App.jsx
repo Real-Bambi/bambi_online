@@ -28,8 +28,6 @@ const onlineRouter = createBrowserRouter([
   {path:'/dash-page3', element: <DashPage3 />},
   {path:'/dash-page4', element: <DashPage4 />},
   {path:'/manage-product', element: <ManageProduct/>},
-  {path:'/allproducts', element: <AllProducts />}
-  {path:'/dashboard', element: <DashBoard />},
   {path:'/allproducts', element: <AllProducts />},
   {path:'/fashion', element:<Fashion />},
   {path:'/vehicles', element:<Vehicles />},
