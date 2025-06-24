@@ -39,9 +39,9 @@ export default function Login() {
             <h2 className="text-2xl font-semibold text-center mb-6">Have an account?</h2>
 
             <form action={loginUser} className="space-y-4">
-               <input type="text" placeholder="Email" className="w-full px-4 py-2 rounded-full bg-white bg-opacity-20 backdrop-blur-sm text-black placeholder-black focus:outline-none focus:ring-2 focus:ring-white" />
+               <input type="text" name="email" placeholder="Email" className="w-full px-4 py-2 rounded-full bg-white bg-opacity-20 backdrop-blur-sm text-black placeholder-black focus:outline-none focus:ring-2 focus:ring-white" />
 
-               <input type={showPassword ? "text" : "password"} placeholder="Password" className="w-full px-4 py-2 pr-12 rounded-full bg-white bg-opacity-20 backdrop-blur-sm text-black placeholder-black focus:outline-none focus:ring-2 focus:ring-white" />
+               <input type={showPassword ? "text" : "password"} name="password" placeholder="Password" className="w-full px-4 py-2 pr-12 rounded-full bg-white bg-opacity-20 backdrop-blur-sm text-black placeholder-black focus:outline-none focus:ring-2 focus:ring-white" />
 
                <div className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-400 px-8 mt-[-17px]" onClick={() => setShowPassword(!showPassword)} >
                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
