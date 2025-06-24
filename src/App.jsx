@@ -14,12 +14,8 @@ import Goods from "./Pages/categories/Goods";
 import Equipment from "./Pages/categories/Equipment";
 import Beauty from "./Pages/categories/Beauty";
 import Animals from "./Pages/categories/Animals";
-<<<<<<< HEAD
-import NotFound from "./Pages/notFound";
-=======
 import AddProduct from "./components/AddProduct";
->>>>>>> 820294b9a0d8ac49c403835a2f9a2fcd8f372948
-
+import NotFound from "./Pages/notFound";
 
 
 const onlineRouter = createBrowserRouter([
