@@ -16,14 +16,14 @@ export default function AllProducts() {
 
   if (isLoading) {
     return (
-      <BeatLoader size={100} className="flex items-center justify-center" />
+      <BeatLoader size={100} className="flex justify-center items-center h-screen" />
     );
   }
 
   if (error) {
     return (
       <div>
-        <h1 className="text-3xl font-black text-center h-20">OOPS! Something went wrong</h1>
+        <h1 className="text-3xl font-black text-center pt-6">OOPS! Something went wrong</h1>
       </div>
     )
   }
