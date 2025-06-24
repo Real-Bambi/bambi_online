@@ -1,11 +1,28 @@
-import { Link } from "react-router";
+import { useNavigate, Link } from "react-router";
 import { Facebook, User, Store, Eye, EyeOff, ArrowBigLeftDash } from "lucide-react";
 import Signup from "../assets/images/signup.png";
 import { useState } from "react";
+import { apiClient } from '../api/client';
 
 export default function Register() {
    const [showPassword, setShowPassword] = useState(false);
-   const [selectedRole, setSelectedRole] = useState('user'); // Default role
+   const [selectedRole, setSelectedRole] = useState('user'); 
+
+   const navigate = useNavigate();
+
+    const registerUser = async (data) => {
+        try {
+            const response = await apiClient.post('/auth/signup', data,{
+                headers: {
+                    "Content-Type": 'application/json',
+                }
+            });
+            console.log(response);
+            navigate("/login");
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
    return (
       <div className="flex flex-col md:flex-row w-full min-h-screen">
@@ -75,7 +92,7 @@ export default function Register() {
                <p className="text-sm text-gray-500 mb-4 mt-4 text-center md:text-left"> Or sign up using your email address</p>
 
 
-               <form className="space-y-4">
+               <form action={registerUser} className="space-y-4">
                   <div className="flex flex-col">
                      <label className="font-bold">Name</label>
                      <input type="text" className="bg-[#eaf3fa] rounded-3xl p-3 w-full focus:outline-none focus:ring-2 focus:ring-[#B2C6D5] border-0" />
