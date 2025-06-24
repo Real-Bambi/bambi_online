@@ -13,8 +13,8 @@ export default function ProductCard() {
 
 
     return (
-        <div onDoubleClick={() => setLiked(!liked)} className='shadow-md  mx-auto  w-full bg-white rounded p-4 md:p-6 relative  transform hover:scale-[1.15] transition  '>
-            <img src={InitialCard} alt="burger image" className='size-56 rounded-3xl' />
+        <div onDoubleClick={() => setLiked(!liked)} className='shadow-md   bg-white rounded p-4 md:p-12 w-full relative  transform hover:scale-[1.05] transition  '>
+            <img src={InitialCard} alt="burger image" className='size-56   rounded-3xl' />
             <span className= 'pt-2 md:pt-4'>
 
                 <h1>Burger</h1>
@@ -23,7 +23,7 @@ export default function ProductCard() {
                     <div className='relative group'>
                         <Plus className='cursor-pointer bg-orangelight rounded p-1 ' />    
                     <div className="absolute top-7 mb-2 left-1/2 transform -translate-x-1/2 bg-bluelight text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none z-10 whitespace-nowrap">
-                        Add to cart
+                        View Product
                     </div>
 
                     </div>

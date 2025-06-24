@@ -6,7 +6,7 @@ import ProductCard from "./ProductCard"
 export default function Catergory () {
     return (
             <div>    
-<div className="grid grid-cols-2 md:grid-cols-5 gap-2 ">
+<div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 ">
         {/* NavBAR */}
 
 
