@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Facebook, User, Store, Eye, EyeOff } from "lucide-react";
+import { Facebook, User, Store, Eye, EyeOff, ArrowBigLeftDash } from "lucide-react";
 import Signup from "../assets/images/signup.png";
 import { useState } from "react";
 
@@ -41,6 +41,7 @@ export default function Register() {
                <div className="flex flex-col md:flex-row gap-6 w-full max-w-xl">
                   <button onClick={() => handleSelect("user")}
                      className="flex-1 bg-white hover:bg-[#eaf3fa] cursor-pointer border-2 border-[#B2C6D5] rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300" >
+
                      <User className="w-10 h-10 text-[#a4b8c7] mb-2" />
                      <span className="text-lg font-semibold">User</span>
                   </button>
@@ -48,10 +49,28 @@ export default function Register() {
 
                   <button onClick={() => handleSelect("vendor")}
                      className="flex-1 bg-white hover:bg-orange-100 cursor-pointer border-2 border-[#FE5D26] rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300" >
+
                      <Store className="w-10 h-10 text-[#FE5D26] mb-2" />
                      <span className="text-lg font-semibold">Vendor</span>
                   </button>
 
+               </div>
+
+
+               <div className="mb-6">
+                  <p className="font-bold italic mt-6 mb-2">Select Country:</p>
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                     <label className="flex items-center font-medium space-x-2">
+                        <input type="radio" name="country" value="china" className="form-radio text-blue-600" />
+                        <span>China</span>
+                     </label>
+
+                     <label className="flex items-center font-medium space-x-2">
+                        <input type="radio" name="country" value="ghana" className="form-radio text-blue-600" />
+                        <span>Ghana</span>
+                     </label>
+                  </div>
                </div>
 
                <p className="text-sm text-gray-500 mb-4 mt-4 text-center md:text-left"> Or sign up using your email address</p>
@@ -104,8 +123,8 @@ export default function Register() {
 
                </form>
 
-               <p className="text-sm font-semibold py-6 text-center md:text-left">
-                  Already have an account?{" "}
+               <p className="text-sm flex gap-2  font-semibold py-6 text-center md:text-left">
+                  <Link to="/"><ArrowBigLeftDash className="text-[#FE5D26] font-extrabold size-8 animate-bounce" /></Link> Already have an account?{" "}
                   <Link to="/login" className="hover:underline font-bold"> Log in </Link>
                </p>
             </div>
