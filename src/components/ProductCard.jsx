@@ -17,8 +17,8 @@ export default function ProductCard({ advert }) {
             <img src={advert.image.url} alt="burger image" className='size-56   rounded-3xl' />
             <span className='pt-2 md:pt-4'>
 
-                <h1>{advert.title}</h1>
-                <h2>{advert.description}</h2>
+                <h1 className='font-bold'>{advert.title}</h1>
+                <h2 className='text-sm font-light'>{advert.description}</h2>
                 <div className='flex flex-row justify-between pt-2 '>
                     <p className='font-bold'>GH₵{advert.price}.00</p>
                     <div className='relative group'>
@@ -36,6 +36,7 @@ export default function ProductCard({ advert }) {
                         <Star className='pt-2 w-5 h-5 ' key={i} />
                     ))}
                 </div>
+                <div className='pt-4 text-lg'> <span className='font-bold'>Vendor:</span><span className='text-orangelight'> {advert.vendor.username}</span></div>
                 <span
                     id="heart"
 
