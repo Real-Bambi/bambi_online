@@ -7,7 +7,6 @@ import DashPage1 from "./Pages/DashBoard/DashPage1";
 import DashPage2 from "./Pages/DashBoard/DashPage2";
 import DashPage3 from "./Pages/DashBoard/DashPage3";
 import DashPage4 from "./Pages/DashBoard/DashPage4";
-import ManageProduct from "./Pages/ManageProduct";
 import AllProducts from "./AllProducts";
 import Fashion from "./Pages/categories/Fashion";
 import Vehicles from "./Pages/categories/Vehicles";
@@ -15,7 +14,11 @@ import Goods from "./Pages/categories/Goods";
 import Equipment from "./Pages/categories/Equipment";
 import Beauty from "./Pages/categories/Beauty";
 import Animals from "./Pages/categories/Animals";
+<<<<<<< HEAD
 import NotFound from "./Pages/notFound";
+=======
+import AddProduct from "./components/AddProduct";
+>>>>>>> 820294b9a0d8ac49c403835a2f9a2fcd8f372948
 
 
 
@@ -28,7 +31,7 @@ const onlineRouter = createBrowserRouter([
   {path:'/dash-page2', element: <DashPage2 />},
   {path:'/dash-page3', element: <DashPage3 />},
   {path:'/dash-page4', element: <DashPage4 />},
-  {path:'/manage-product', element: <ManageProduct/>},
+  {path:'/add-product', element: <AddProduct/>},
   {path:'/allproducts', element: <AllProducts />},
   {path:'/fashion', element:<Fashion />},
   {path:'/vehicles', element:<Vehicles />},

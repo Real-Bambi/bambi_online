@@ -5,7 +5,7 @@ import { Delete, DeleteIcon, Minus, Plus } from "lucide-react"
 import ProductCard from "../../components/ProductCard"
 
 
-export default function DashBoard() {
+export default function DashPage4() {
   const [number, setNumber] = useState(0)
 
   const increaseNumber = () => {
