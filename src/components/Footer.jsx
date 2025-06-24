@@ -7,8 +7,7 @@ import visa from "../assets/images/visa.png"
 import mastercard from "../assets/images/master.png"
 import gpay from "../assets/images/gpay.png"
 import paypal from "../assets/images/paypalicon.png"
-import trustpilot from "../assets/images/trustpilot.png"
-import McAfee from "../assets/images/mcafee.png"
+
 
 
 

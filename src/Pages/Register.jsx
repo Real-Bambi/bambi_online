@@ -5,10 +5,7 @@ import { useState } from "react";
 
 export default function Register() {
    const [showPassword, setShowPassword] = useState(false);
-
-   const handleSelect = (role) => {
-      setSelectedRole(role);
-   };
+   const [selectedRole, setSelectedRole] = useState('user'); // Default role
 
    return (
       <div className="flex flex-col md:flex-row w-full min-h-screen">
@@ -39,19 +36,21 @@ export default function Register() {
                <h1 className="text-3xl md:text-xl font-bold mb-6 text-center">Select Your Role</h1>
 
                <div className="flex flex-col md:flex-row gap-6 w-full max-w-xl">
-                  <button onClick={() => handleSelect("user")}
-                     className="flex-1 bg-white hover:bg-[#eaf3fa] cursor-pointer border-2 border-[#B2C6D5] rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300" >
+                  <button onClick={() => setSelectedRole("user")}
+                     className={`flex-1 bg-white ${selectedRole === "user" ? "hover:bg-orange-100" : "hover:bg-[#eaf3fa]"} cursor-pointer border-2 ${selectedRole === "user" ? "border-[#FE5D26]" : "border-[#B2C6D5]"} rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300`} >
 
-                     <User className="w-10 h-10 text-[#a4b8c7] mb-2" />
+                     <User className={`w-10 h-10 ${selectedRole === "user" ? "text-[#FE5D26]" : "text-[#a4b8c7]"} mb-2`} />
                      <span className="text-lg font-semibold">User</span>
+                     <input type="radio" name="role" value="user" checked={selectedRole === "user"} readOnly />
                   </button>
 
 
-                  <button onClick={() => handleSelect("vendor")}
-                     className="flex-1 bg-white hover:bg-orange-100 cursor-pointer border-2 border-[#FE5D26] rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300" >
+                  <button onClick={() => setSelectedRole("vendor")}
+                     className={`flex-1 bg-white ${selectedRole === "vendor" ? "hover:bg-orange-100" : "hover:bg-[#eaf3fa]"} cursor-pointer border-2 ${selectedRole === "vendor" ? "border-[#FE5D26]" : "border-[#B2C6D5]"} rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300`} >
 
-                     <Store className="w-10 h-10 text-[#FE5D26] mb-2" />
+                     <Store className={`w-10 h-10 ${selectedRole === "vendor" ? "text-[#FE5D26]" : "text-[#a4b8c7]"} mb-2`} />
                      <span className="text-lg font-semibold">Vendor</span>
+                     <input type="radio" name="role" value="vendor" checked={selectedRole === "vendor"} readOnly />
                   </button>
 
                </div>
@@ -62,12 +61,12 @@ export default function Register() {
 
                   <div className="flex flex-col sm:flex-row gap-4">
                      <label className="flex items-center font-medium space-x-2">
-                        <input type="radio" name="country" value="china" className="form-radio text-blue-600" />
+                        <input type="radio" name="location" value="china" className="form-radio text-blue-600" />
                         <span>China</span>
                      </label>
 
                      <label className="flex items-center font-medium space-x-2">
-                        <input type="radio" name="country" value="ghana" className="form-radio text-blue-600" />
+                        <input type="radio" name="location" value="ghana" className="form-radio text-blue-600" />
                         <span>Ghana</span>
                      </label>
                   </div>
