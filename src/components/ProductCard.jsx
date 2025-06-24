@@ -7,29 +7,31 @@ import { useState } from 'react';
 
 
 
-export default function ProductCard() {
+export default function ProductCard({ advert }) {
     const [liked, setLiked] = useState(false);
 
 
 
     return (
         <div onDoubleClick={() => setLiked(!liked)} className='shadow-md   bg-white rounded p-4 md:p-12 w-full relative  transform hover:scale-[1.05] transition  '>
-            <img src={InitialCard} alt="burger image" className='size-56   rounded-3xl' />
-            <span className= 'pt-2 md:pt-4'>
+            <img src={advert.image.url} alt="burger image" className='size-56   rounded-3xl' />
+            <span className='pt-2 md:pt-4'>
 
-                <h1>Burger</h1>
+                <h1>{advert.title}</h1>
+                <h2>{advert.description}</h2>
                 <div className='flex flex-row justify-between pt-2 '>
-                    <p className='font-bold'>Ghc 10.99</p>
+                    <p className='font-bold'>GH₵{advert.price}.00</p>
                     <div className='relative group'>
-                        <Plus className='cursor-pointer bg-orangelight rounded p-1 ' />    
-                    <div className="absolute top-7 mb-2 left-1/2 transform -translate-x-1/2 bg-bluelight text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none z-10 whitespace-nowrap">
-                        View Product
-                    </div>
+                        <Plus className='cursor-pointer bg-orangelight rounded p-1 ' />
+                        <div className="absolute top-7 mb-2 left-1/2 transform -translate-x-1/2 bg-bluelight text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none z-10 whitespace-nowrap">
+                            View Product
+                        </div>
 
                     </div>
 
                 </div>
                 <div className='flex'>
+                    
                     {[...Array(5)].map((_, i) => (
                         <Star className='pt-2 w-5 h-5 ' key={i} />
                     ))}
