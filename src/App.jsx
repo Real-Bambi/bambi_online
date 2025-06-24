@@ -15,6 +15,7 @@ import Goods from "./Pages/categories/Goods";
 import Equipment from "./Pages/categories/Equipment";
 import Beauty from "./Pages/categories/Beauty";
 import Animals from "./Pages/categories/Animals";
+import NotFound from "./Pages/notFound";
 
 
 
@@ -35,7 +36,7 @@ const onlineRouter = createBrowserRouter([
   {path:'/Equipment', element:<Equipment />},
   {path:'/beauty', element:<Beauty />},
   {path:'/animals', element:<Animals />},
-  
+  {path: '*', element:<NotFound />}
 ])
 function App() {
 
