@@ -10,6 +10,11 @@ import { useState } from 'react';
 export default function ProductCard({ advert }) {
     const [liked, setLiked] = useState(false);
 
+     // Guard clause to avoid runtime errors
+  if (!advert || !advert.image || !advert.image.url) {
+    return null;
+  }
+
 
 
     return (
