@@ -30,40 +30,16 @@ export default function Animals() {
           <div className="flex">
             <div  className="hidden md:flex  md:relative items-center justify-center p-4 gap-x-5" id="filters">
           <div className="flex flex-row items-center justify-center w-25 md:w-48 md:rounded-2xl md:border gap-2 px-3 md:px-8 py-2 sm:w-20  hover:bg-orangelight hover:text-white">
-            <label htmlFor="">Trends</label>
-            <select name="" id="" className="">
-              <option selected disabled></option>
-              <option value="">1</option>
-              <option value="">2</option>
-              <option value="">3</option>
-            </select>
+            <button>Pets for sale</button>
           </div>
           <div className="md:border flex flex-row md:items-center md:justify-center md:rounded-2xl w-25 md:w-48 px-3 md:px-8 py-2 gap-2 md:gap-4   hover:bg-orangelight hover:text-white">
-            <label htmlFor="" className="text-center">Pricing</label>
-            <select name="" id="">
-              <option selected disabled></option>
-              <option value="">1</option>
-              <option value="">2</option>
-              <option value="">3</option>
-            </select>
+           <button>Pet Supplies</button>
           </div>
           <div className="md:border flex  flex-row md:items-center md:justify-center md:rounded-2xl w-25 md:w-48 px-3 md:px-8 py-2  hover:bg-orangelight hover:text-white">
-            <label htmlFor="">Color</label>
-            <select name="" id="">
-              <option selected disabled></option>
-              <option value="">1</option>
-              <option value="">2</option>
-              <option value="">3</option>
-            </select>
+            <button>Grooming</button>
           </div>
           <div className="md:border flex flex-row md:items-center md:justify-center md:rounded-2xl w-25 md:w-48 px-3 md:px-8 py-2  hover:bg-orangelight hover:text-white">
-            <label htmlFor="">Recommended</label>
-            <select name="" id="">
-              <option selected disabled></option>
-              <option value="">1</option>
-              <option value="">2</option>
-              <option value="">3</option>
-            </select>
+         <button>Wellness</button>
           </div>
           </div>
           </div>

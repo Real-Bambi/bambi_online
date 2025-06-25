@@ -5,24 +5,26 @@ import { ChevronUp } from "lucide-react";
 import { Link } from "react-router";
 import { apiFetcher } from "./api/client";
 import useSWR from "swr";
-import { BeatLoader } from "react-spinners";
+import { ScaleLoader } from "react-spinners";
 import ProductCard from "./components/ProductCard";
 
 
 
 export default function AllProducts() {
   const { data, isLoading, error } = useSWR("/adverts", apiFetcher);
-  console.log(data);
+  console.log(data)
 
   if (isLoading) {
     return (
-      <BeatLoader size={100} className="flex justify-center items-center h-screen" />
+      <div className="flex justify-center items-center h-screen">
+        <ScaleLoader size={100} color="#FE5D26"   />
+      </div>
     );
   }
 
   if (error) {
     return (
-      <div>
+      <div className="flex justify-center items-center h-screen">
         <h1 className="text-3xl font-black text-center pt-6">OOPS! Something went wrong</h1>
       </div>
     )
