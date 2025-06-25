@@ -97,7 +97,7 @@ export default function Home() {
           </div>
 
 
-          <div className="flex-1 flex justify-center gap-4 overflow-x-auto md:overflow-visible text-[#FE5D26]">
+          <div className="flex-1 flex justify-center gap-4 overflow-x-auto md:overflow-visible text-[#FE5D26]  animate-scroll whitespace-nowrap">
 
             <div className="flex flex-col items-center">
               <Link to="/fashion"><img src={Fashion} alt="Fashion" className="w-24 h-36 object-cover rounded shadow hover:scale-105 duration-300 transition-transform" />
