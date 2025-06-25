@@ -11,6 +11,7 @@ import { useState } from "react";
 import useSWR from "swr";
 import { ScaleLoader } from "react-spinners";
 import { apiFetcher } from "../api/client";
+import ErrorImage from '../assets/images/error1.png';
 
 
 export default function Home() {
@@ -23,7 +24,7 @@ export default function Home() {
 
   if (isLoading) {
     return (
-      <div>
+      <div className="flex justify-center items-center h-screen ">
         <ScaleLoader size={150} color="#FE5D26" />
       </div>
     )
@@ -31,12 +32,11 @@ export default function Home() {
 
   if (error) {
     return (
-      <div>
-        <h1>Something went wrong</h1>
+      <div className="flex justify-center items-center h-screen">
+        <img src={ErrorImage} alt="Error" />
       </div>
     )
   }
-
 
 
   return (
@@ -50,14 +50,14 @@ export default function Home() {
           <div>
             <h2 className="text-lg md:text-xl font-semibold">Reliable Imports & Exports between China and Ghana</h2>
             <p className="text-sm md:text-base text-cyan-100 mt-2">
-              Explore quality electronics, fashion, home goods, and more — safely imported from China to Ghana at competitive rates.
+              Explore quality electronics, fashion, home goods, and more — safe logistics at competitive rates.
 
             </p>
           </div>
 
 
-          <Link to="/products"><button className="bg-white text-cyan-700 px-5 py-2 rounded-full font-bold hover:bg-[#f3eae7] cursor-pointer transition animate-pulse">
-            Shop now
+          <Link to="/register"><button className="bg-white text-cyan-700 px-5 py-2 rounded-full font-bold hover:bg-[#f3eae7] cursor-pointer transition animate-pulse">
+            Sell  Your Products
           </button></Link>
         </div>
       </section>
