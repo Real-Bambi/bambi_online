@@ -18,7 +18,7 @@ export default function EditProduct() {
 
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("ACCESS_TOKEN")}`
-                }
+            }
             });
             console.log(response.data);
             navigate('/dash-page2');
