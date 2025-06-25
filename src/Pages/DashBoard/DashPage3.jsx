@@ -15,7 +15,7 @@ export default function DashPage3() {
   const navigate = useNavigate();
 
   // To Collect Data for the table
-  const { data, isLoading, error } = useSWR("/adverts", apiFetcher);
+  const { data, isLoading, error } = useSWR("/adverts/my-adverts", apiFetcher);
 
   if (isLoading) {
     return (
