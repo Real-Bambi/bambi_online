@@ -20,7 +20,7 @@ export default function Register() {
             }
          });
          console.log(response);
-         navigate("/login");
+         navigate("/dash-page1");
       } catch (error) {
          console.log(error);
       }
