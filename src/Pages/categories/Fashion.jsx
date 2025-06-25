@@ -1,4 +1,4 @@
-import Category from "../../components/Category"
+
 import { useRef } from "react";
 import FashVideo from '../../assets/videos/fashion.mp4';
 import { ChevronUp, ChevronDown } from "lucide-react";
@@ -14,6 +14,7 @@ import ErrorImage from '../../assets/images/error1.png'
 
 export default function Fashion() {
   const videoRef = useRef();
+
 
   const { data, isLoading, error } = useSWR('/adverts?category=fashion', apiFetcher)
 

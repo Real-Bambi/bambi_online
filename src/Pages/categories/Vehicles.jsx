@@ -8,12 +8,15 @@ import { Link } from "react-router";
 import { apiFetcher } from "../../api/client";
 import useSWR from "swr";
 import ProductCard from "../../components/ProductCard";
+import { ScaleLoader } from "react-spinners";
+import ErrorImage from '../../assets/images/error1.png'
+
 
 
 
 
 export default function Vehicles() {
-
+    const videoRef = useRef();
 
   const toggleFilters = () => {
     const show = document.getElementById("filters");
@@ -22,7 +25,25 @@ export default function Vehicles() {
     const you = document.getElementById("toggler");
     you.classList.replace("rotate-270", "rotate-360");
   }
-  const videoRef = useRef();
+
+  const {data, isLoading,error} = useSWR('/adverts?category=automobiles', apiFetcher);
+
+  if (isLoading) {
+    return(
+      <div className="flex justify-center items-center h-screen">
+          <ScaleLoader size={100} color="#FE5D26" />
+      </div>
+    );
+  }
+
+  if (error){
+    return(
+      <div className="flex justify-center items-center h-screen">
+        <img src={ErrorImage} className="object-cover" alt="" />
+      </div>
+    )
+  }
+
   return (
     <div>
       <div id="navbar">
@@ -59,8 +80,8 @@ export default function Vehicles() {
         </form>
 
 
-        <div className=" ">
-          <Category />
+        <div className="grid grid-cols-4 gap-4 ">
+        {data?.adverts?.map(advert => <ProductCard key={advert.id} advert={advert} />)}
         </div>
 
         <div className="fixed right-0.5 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orangelight rounded-full w-12 h-12 flex items-center justify-center text-white font-semibold">

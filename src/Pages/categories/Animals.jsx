@@ -4,8 +4,15 @@ import petVideo from '../../assets/videos/pets.mp4';
 import { ChevronUp, ChevronDown } from "lucide-react";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import useSWR from "swr";
+import { apiFetcher } from "../../api/client";
+import { ScaleLoader } from "react-spinners";
+import ProductCard from "../../components/ProductCard";
+import ErrorImage from '../../assets/images/error1.png';
+import { useSearchParams } from "react-router";
 
 export default function Animals() {
+   const videoRef = useRef();
   const toggleFilters = () => {
     const show = document.getElementById("filters");
     show.classList.toggle("hidden");
@@ -13,7 +20,26 @@ export default function Animals() {
     const you = document.getElementById("toggler");
     you.classList.replace("rotate-270", "rotate-360");
   }
-  const videoRef = useRef();
+    const [SearchParams] = useSearchParams();
+    const id = SearchParams.get("id")
+  const {data, isLoading, error} = useSWR(`/adverts?category=animal`,apiFetcher);
+
+  if (isLoading) {
+    return(
+      <div className="flex justify-center items-center h-screen">
+        <ScaleLoader size={100} color="#FE5D26" />
+      </div>
+    )
+  }
+
+  if(error) {
+    return(
+      <div className="flex  justify-center items-center h-screen">
+        <img src={ErrorImage} alt="" />
+      </div>
+    )
+  }
+ 
   return (
     <div >
       <div id="navbar">
@@ -49,7 +75,7 @@ export default function Animals() {
 
         </form>
         <div className=" flex items-center justify-center">
-          <Category />
+        {data?.adverts?.map(advert => <ProductCard key={advert} advert={advert} />)}
         </div>
         <div className="fixed right-0.5 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orangelight rounded-full w-12 h-12 flex items-center justify-center text-white font-semibold">
           <a href="#navbar"><button className="text-white "><ChevronUp /></button></a>
