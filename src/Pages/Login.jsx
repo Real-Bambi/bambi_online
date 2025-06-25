@@ -2,6 +2,7 @@ import { Link,  useNavigate } from "react-router";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { apiClient } from '../api/client';
+import Log from "../assets/images/log.png";
 
 
 
@@ -19,7 +20,7 @@ export default function Login() {
                 }
             });
             console.log(response);
-            localStorage.setItem('ACCESS_TOKEN', response.data.data.accessToken);
+            localStorage.setItem('ACCESS_TOKEN', response.data.token);
             navigate('/');
             
           } catch (error) {
@@ -32,11 +33,14 @@ export default function Login() {
 
 
    return (
-      <div className="min-h-screen flex items-center justify-center bg-cover bg-center px-4">
+      <div className="w-[80%] h-[648px] mx-auto mt-[80px] flex flex-row justify-around">
 
-
+         <div className="w-[45%] bg-[url(../assets/images/login.png)] bg-cover bg-center"></div>
          <div className="bg-[#FE5D26] bg-opacity-20 backdrop-blur-md p-8 rounded-xl shadow-lg max-w-md w-full text-white ">
-            <h2 className="text-2xl font-semibold text-center mb-6">Have an account?</h2>
+          
+         </div>
+         <div className="w-[45%]">
+             <h2 className="text-2xl font-semibold text-center mb-6">Have an account?</h2>
 
             <form action={loginUser} className="space-y-4">
                <input type="text" name="email" placeholder="Email" className="w-full px-4 py-2 rounded-full bg-white bg-opacity-20 backdrop-blur-sm text-black placeholder-black focus:outline-none focus:ring-2 focus:ring-white" />
