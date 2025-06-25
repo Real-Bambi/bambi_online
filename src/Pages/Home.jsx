@@ -7,9 +7,38 @@ import { Link } from "react-router";
 import Fashion from '../assets/images/fashion.jpg';
 import Equipment from '../assets/images/equipment.jpg';
 import Makeup from '../assets/images/makeup.jpg';
+import { useState } from "react";
+import useSWR from "swr";
+import { ScaleLoader } from "react-spinners";
+import { apiFetcher } from "../api/client";
+import ErrorImage from '../assets/images/error1.png';
 
 
 export default function Home() {
+
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+
+  const { data, isLoading, error } = useSWR("/adverts?limit=12", apiFetcher)
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen ">
+        <ScaleLoader size={150} color="#FE5D26" />
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <img src={ErrorImage} alt="Error" />
+      </div>
+    )
+  }
+
+
   return (
     <div>
       <Navbar />
@@ -19,16 +48,16 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
 
           <div>
-            <h2 className="text-lg md:text-xl font-semibold">Reliable Imports from China to Ghana</h2>
+            <h2 className="text-lg md:text-xl font-semibold">Reliable Imports & Exports between China and Ghana</h2>
             <p className="text-sm md:text-base text-cyan-100 mt-2">
-              Explore quality electronics, fashion, home goods, and more — safely imported from China to Ghana at competitive rates.
+              Explore quality electronics, fashion, home goods, and more — safe logistics at competitive rates.
 
             </p>
           </div>
 
 
-          <Link to="/products"><button className="bg-white text-cyan-700 px-5 py-2 rounded-full font-bold hover:bg-[#f3eae7] cursor-pointer transition animate-pulse">
-            Shop now
+          <Link to="/register"><button className="bg-white text-cyan-700 px-5 py-2 rounded-full font-bold hover:bg-[#f3eae7] cursor-pointer transition animate-pulse">
+            Sell  Your Products
           </button></Link>
         </div>
       </section>
@@ -48,8 +77,8 @@ export default function Home() {
       </section>
 
       <h1 className="text-xl md:text-3xl font-extrabold animate-pulse mt-4 text-[#586670] p-4">TRENDING NOW</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 p-4 md:p-8">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12].map(event => <ProductCard key={event.id} event={event} />)}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4 md:p-8">
+        {data?.adverts?.slice(0, 12).map(advert => <ProductCard key={advert.id} advert={advert} />)}
       </div>
 
       <section className="bg-[#B2C6D5] text-white px-6 py-12 md:px-12">
