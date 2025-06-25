@@ -19,21 +19,19 @@ export default function Navbar() {
         }
     };
 
-    //     // for the login to pop up
-    // const [showLogin, setShowLogin] = useState(false);
-
     const Categories = [
+        " ",
         "fashion",
         "animals",
         "allproducts",
         "beauty",
         "Equipment",
         "goods",
-        "vehicles",
+        "vehicle",
     ];
 
     const handleSearch = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         // Convert to lowercase to match paths
         const trimmedQuery = query.trim().toLowerCase();
@@ -67,13 +65,13 @@ export default function Navbar() {
                     <div className="flex-1 hidden md:flex items-center gap-2 mx-6">
                         <select onChange={handleChange}
                             className="bg-white border border-[#fe5d26] text-black text-sm px-3 py-2 rounded-md">
-                            <option disabled select>All</option>
+                            <option disabled selected>All</option>
                             <option value={"/fashion"}>Fashion</option>
                             <option value={"/animals"}>Animal</option>
                             <option value={"/beauty"}>Beauty</option>
-                            <option value={"/equipment"}>Equipment</option>
+                            <option value={"/equipment"}>Electronics</option>
                             <option value={"/goods"}>Consumable goods</option>
-                            <option value={"/vehicles"}>Vehicle</option>
+                            <option value={"/vehicles"}>AutoMobiles</option>
                         </select>
                         <form onSubmit={handleSearch} className="flex flex-1 gap-0">
                             <input
@@ -117,9 +115,8 @@ export default function Navbar() {
                                 id="authDropdown"
                                 className="absolute hidden bg-white text-black right-0 mt-1 w-32 rounded shadow-lg overflow-hidden z-50"
                             >
-                                <button onClick={() => setShowLogin(true)}
-                                    className="block px-4 py-2 w-full hover:bg-[#fe5d26] rounded-md">Login</button>
-                                <Link to="register" className="block px-4 py-2 w-full items-center hover:bg-[#fe5d26] rounded-md">Register</Link>
+                                <Link to="/login" className="block px-4 py-2 w-full items-center hover:bg-[#fe5d26] rounded-md">Login</Link>
+                                <Link to="/register" className="block px-4 py-2 w-full items-center hover:bg-[#fe5d26] rounded-md">Register</Link>
                             </div>
                         </div>
                     </div>
@@ -145,22 +142,7 @@ export default function Navbar() {
                     </form>
                 </div>
             </nav>
-
-            {/* // imported login form
-        {showLogin && (
-        <div className="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded w-full max-w-sm relative">
-            <button
-              onClick={() => setShowLogin(false)}
-              className="absolute top-2 right-3 text-black hover:text-[#fe5d26]"
-            >
-              &times;
-            </button>
-            <Login />
-          </div>
-        </div>
-      )
-    }; */}
+    
         </>
     )
 }
