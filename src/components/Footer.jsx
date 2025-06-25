@@ -101,7 +101,7 @@ export default function Footer() {
       <div className="pt-5">
         <h3 id="follow-title" className="font-bold text-[22px] text-[#fe5d26]">Follow Us</h3>
         <div className="flex gap-4 mt-2">
-          <Link><img src={facebookIcon} alt="facebook" className="h-6 w-6 hover:scale-110 transition" /></Link>
+          <Link to="#https://www.facebook.com" target="blank"><img src={facebookIcon} alt="facebook" className="h-6 w-6 hover:scale-110 transition" /></Link>
           <Link><img src={twitterIcon} alt="twitter" className="h-6 w-6 hover:scale-110 transition" /></Link>
           <Link><img src={igIcon} alt="instagram" className="h-6 w-6 hover:scale-110 transition" /></Link>
           <Link><img src={whatsappIcon} alt="whatsapp" className="h-6 w-6 hover:scale-110 transition" /></Link>

@@ -31,13 +31,7 @@ export default function Product() {
     <>
       <Navbar />
 
-      <Link
-        to={-1}
-        className="fixed top-24 left-4 bg-[#fe5d26] hover:bg-black text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-50"
-        title="Go Back"
-      >
-        ←
-      </Link>
+     
 
       <div className="max-w-7xl mx-auto px-4 py-30 space-y-16 text-black">
 
@@ -153,6 +147,14 @@ export default function Product() {
             {activeTab === "shipping" && <p>Shipping info and return policy will go here.</p>}
           </div>
         </div>
+
+         <Link
+        to={-1}
+        className="fixed top-24 left-4 bg-[#fe5d26] hover:bg-black text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-50"
+        title="Go Back"
+      >
+        ←
+      </Link>
 
         {/* Related Products */}
         <div>
