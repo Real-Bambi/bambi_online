@@ -1,11 +1,32 @@
+import { apiClient, } from "../api/client";
+import { useNavigate } from "react-router";
 
 
-export default function AddProduct() {
+export default function AddProduct({onClose}) {
+    const navigate = useNavigate();
+
+    //  Post Data to API
+    const postProduct = async (data) => {
+
+        try {
+            const response = await apiClient.post("/adverts", data, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            console.log(response);
+            navigate('/dash-page1');
+
+        } catch (error) {
+            console.log(error);
+
+        }
+    };
+
 
     return (
         <>
-            <form className="bg-white rounded-lg shadow-md border border-gray-300  py-6 px-10 flex flex-col justify-center ml-[25%] w-[50%] ">
-                <div className="h-[80vh]">
+            <form action={postProduct} className="bg-white rounded-lg shadow-md border border-gray-300  py-6 px-10 flex flex-col mx-auto  w-[40%] h-[95vh] mt-4">
                     <div className="text-3xl font-bold m-auto"><h1>Add Product</h1></div>
 
                     <div className="flex flex-col p-4 ">
@@ -41,11 +62,17 @@ export default function AddProduct() {
                         <textarea required name="description" placeholder="Enter Product Description" className=" p-2  pb-20 rounded-md border " />
                     </div>
 
-
-                    <div className="flex flex-row  ">
-                        <button type="submit" className="border rounded-2xl bg-amber-300 px-4 py-2">Add Product</button>
+                    <div className="mt-1 flex flex-row gap-x-40 px-10">
+                    <div >
+                        <button type="submit" className="border rounded-2xl bg-[#FE5D26] px-4 py-2">Add Product</button>
                     </div>
-                </div>
+
+                    <div>
+                        <button
+                            onClick={onClose}
+                            className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">Cancel</button>
+                    </div>
+                    </div>
             </form>
         </>
 

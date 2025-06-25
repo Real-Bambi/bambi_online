@@ -15,6 +15,7 @@ import Equipment from "./Pages/categories/Equipment";
 import Beauty from "./Pages/categories/Beauty";
 import Animals from "./Pages/categories/Animals";
 import AddProduct from "./components/AddProduct";
+import EditProduct from "./components/EditProduct";
 import NotFound from "./Pages/notFound";
 
 
@@ -29,6 +30,7 @@ const onlineRouter = createBrowserRouter([
   {path:'/dash-page3', element: <DashPage3 />},
   {path:'/dash-page4', element: <DashPage4 />},
   {path:'/add-product', element: <AddProduct/>},
+  {path:'/edit-product', element: <EditProduct/>},
   {path:'/allproducts', element: <AllProducts />},
   {path:'/fashion', element:<Fashion />},
   {path:'/vehicles', element:<Vehicles />},
