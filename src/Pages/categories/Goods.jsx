@@ -75,7 +75,7 @@ export default function Goods() {
 
         </form>
 
-        <div className=" flex items-center justify-center">
+        <div className=" grid mx-4 md:grid-cols-4 ">
           {data?.adverts?.map(advert => <ProductCard key={advert.id} advert={advert} />)}
         </div>
         <div className="fixed right-0.5 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orangelight rounded-3xl w-16 h-12 flex items-center justify-center text-white font-semibold">

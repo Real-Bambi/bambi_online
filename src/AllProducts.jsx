@@ -60,7 +60,7 @@ export default function AllProducts() {
 
         <h1 className="p-4">All products</h1>
       </div>
-    <div className="grid grid-cols-4 gap-4  md:w-full">
+    <div className="grid mx-4 md:grid-cols-4 gap-4  md:w-full">
         {data.adverts.map(advert => <ProductCard key={advert.id} advert={advert} />)}
       </div>
       <div className="fixed right-0.5 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orangelight rounded-full w-12 h-12 flex items-center justify-center text-white font-semibold">

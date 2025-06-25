@@ -48,10 +48,10 @@ export default function Beauty() {
       <div className="p-6">
         <div className=" w-full h-64 md:h-[400px] ">
           <video ref={videoRef} src={BeauVideo} autoPlay muted playsInline loop className="  w-full h-full object-cover" />
-          <h1 className=" p-4 absolute top-50 text-white  text-8xl font-bold pt-16 ">Beauty and Care</h1>
+          <h1 className=" p-4 absolute top-40 md:top-50 text-white text-2xl  md:text-8xl font-bold pt-16 ">Beauty and Care</h1>
         </div>
         <form action="" className=" flex items-center gap-2 md:flex-row p-4 md:p-6 md:items-center md:justify-around bg-white ">
-          <h1 className="font-bold text-xl">Sort By:</h1>            <ChevronDown onClick={toggleFilters} className=" md:hidden"/>
+          <h1 className="font-bold text-xl">Sort By:</h1> <ChevronDown onClick={toggleFilters} className=" md:hidden"/>
 
           <div className="flex`">
             <div  className="hidden md:flex  md:relative items-center justify-center p-4 gap-x-5 " id="filters">
@@ -75,7 +75,7 @@ export default function Beauty() {
 
         </form>
 
-        <div className=" grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className=" grid mx-4 md:grid-cols-4 gap-4">
         {data?.adverts?.map(advert =>  <ProductCard key={advert.id} advert={advert} />)}
         </div>
         <div className="fixed right-0.5 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orangelight rounded-full w-12 h-12 flex items-center justify-center text-white font-semibold">

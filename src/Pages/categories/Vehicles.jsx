@@ -52,7 +52,7 @@ export default function Vehicles() {
       <div className="p-2 md:p-4">
         <div className="w-full h-64 md:h-[400px] bg- ">
           <video ref={videoRef} src={AutoVideo} autoPlay muted playsInline loop className=" w-full h-full object-cover" />
-          <h1 className="p-2 md:p-4 sm:absolute top-40 sm:top-70 text-white text-2xl md:text-6xl font-bold pt-16 ">AutoMobiles</h1>
+          <h1 className="p-2 md:p-4 absolute md:top-70 top-40 text-white text-2xl md:text-6xl font-bold pt-16 ">AutoMobiles</h1>
         </div>
         <form action="" className=" flex items-center gap-2 md:flex-row p-4 md:p-6 md:items-center md:justify-around bg-white ">
           <h1 className="font-bold text-xl">Sort By:</h1>            <ChevronDown onClick={toggleFilters} className=" md:hidden" />
@@ -80,7 +80,7 @@ export default function Vehicles() {
         </form>
 
 
-        <div className="grid grid-cols-4 gap-4 ">
+        <div className="grid mx-4 md:grid-cols-4 gap-4 ">
         {data?.adverts?.map(advert => <ProductCard key={advert.id} advert={advert} />)}
         </div>
 
