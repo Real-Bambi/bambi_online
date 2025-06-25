@@ -7,7 +7,7 @@ export default function DashPage1 () {
   return(
       <>
       <SideBar/>
-      <div className="bg-[#F5F5F5] h-[full] w-[83%] ml-[17%] p-10 ">
+      <div className="bg-[#F5F5F5] h-[full] w-[80%] ml-[20%] p-10 ">
         <p className="font-bold text-5xl text-black mb-10 ">Welcome , Dede</p>
 
         <div class="grid grid-cols-4 gap-4 mb-6">

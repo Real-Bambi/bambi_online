@@ -8,8 +8,6 @@ export default function Register() {
    const [showPassword, setShowPassword] = useState(false);
    const [selectedRole, setSelectedRole] = useState('user');
 
-
-
    const navigate = useNavigate();
 
    const registerUser = async (data) => {
@@ -51,6 +49,7 @@ export default function Register() {
                </div>
 
                <hr className="my-4" />
+
                <form action={registerUser} className="space-y-4">
 
                   <h1 className="text-3xl md:text-xl font-bold mb-6 text-center">Select Your Role</h1>

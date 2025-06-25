@@ -1,9 +1,32 @@
 import ProductCard from "../../components/ProductCard"
 import SideBar from "../../components/SideBar"
+import useSWR from "swr"
+import { apiFetcher } from "../../api/client"
+import { BeatLoader } from "react-spinners";
 
 
 
 export default function DashPage2() {
+  const{data, isLoading , error} = useSWR("/adverts/my-adverts" , apiFetcher)
+   if (isLoading) {
+        return (
+            <div>
+                <BeatLoader size={100} />
+            </div>
+        );
+    }
+
+    if (error) {
+        return(
+            <div>
+                <p>something is wrong</p>
+            </div>
+        );
+    }
+ 
+    console.log(data);
+ 
+
   return (
     <>
       <SideBar />
