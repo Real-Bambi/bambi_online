@@ -19,7 +19,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
 
-  const { data, isLoading, error } = useSWR("/adverts?limit=2", apiFetcher)
+  const { data, isLoading, error } = useSWR("/adverts?limit=12", apiFetcher)
 
   if (isLoading) {
     return (
@@ -77,8 +77,8 @@ export default function Home() {
       </section>
 
       <h1 className="text-xl md:text-3xl font-extrabold animate-pulse mt-4 text-[#586670] p-4">TRENDING NOW</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 p-4 md:p-8">
-        {data?.adverts?.map(advert => <ProductCard key={advert.id} advert={advert} />)}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4 md:p-8">
+        {data?.adverts?.slice(0, 12).map(advert => <ProductCard key={advert.id} advert={advert} />)}
       </div>
 
       <section className="bg-[#B2C6D5] text-white px-6 py-12 md:px-12">
