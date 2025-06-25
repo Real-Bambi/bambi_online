@@ -5,7 +5,7 @@ import { useState } from "react";
 import useSWR from "swr";
 import { apiFetcher } from "../api/client";
 import { BeatLoader } from "react-spinners";
-import { useSearchParams } from "react-router";
+import { useSearchParams, Link } from "react-router";
 
 export default function Product() {
   const [activeTab, setActiveTab] = useState("description");
@@ -30,6 +30,15 @@ export default function Product() {
   return (
     <>
       <Navbar />
+
+      <Link
+        to={-1}
+        className="fixed top-24 left-4 bg-[#fe5d26] hover:bg-black text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-50"
+        title="Go Back"
+      >
+        ←
+      </Link>
+
       <div className="max-w-7xl mx-auto px-4 py-30 space-y-16 text-black">
 
         {/* Product Section */}
