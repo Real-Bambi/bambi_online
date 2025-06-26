@@ -20,7 +20,7 @@ export default function Navbar() {
     };
 
     const Categories = [
-       
+
         "fashion",
         "animals",
         "allproducts",
@@ -125,7 +125,7 @@ export default function Navbar() {
 
                 {/* mobile search */}
                 <div className="mt-3 w-full flex justify-center md:hidden">
-                    <form  onSubmit={handleSearch} className="flex w-full max-w-2xl">
+                    <form onSubmit={handleSearch} className="flex w-full max-w-2xl">
                         <input
                             type="text"
                             name="search"
@@ -143,7 +143,7 @@ export default function Navbar() {
                     </form>
                 </div>
             </nav>
-    
+
         </>
     )
 }
