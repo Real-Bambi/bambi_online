@@ -47,7 +47,7 @@ export default function Equipment() {
       <div id="navbar">
         <Navbar />
       </div>
-      <div className="p-4 mt-20">
+      <div className="p-4 mt-35 md:mt-20">
         <div className=" w-full  h-64 md:h-[400px] ">
           <video ref={videoRef} src={EquipVideo} autoPlay muted playsInline loop className="  w-full h-full object-cover" />
           <h1 className=" p-4 absolute top-50 md:top-70 text-white text-4xl  md:text-8xl  font-bold pt-16 ">Electronics</h1>

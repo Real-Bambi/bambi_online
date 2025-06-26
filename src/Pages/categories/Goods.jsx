@@ -45,7 +45,7 @@ export default function Goods() {
       <div id="navbar">
         <Navbar />
       </div>
-      <div className="p-4">
+      <div className=" mt-35 md:mt-20 p-4">
         <div className=" w-full h-64 md:h-[400px] ">
           <video ref={videoRef} src={GoodsVideo} autoPlay muted playsInline loop className="  w-full h-full object-cover" />
           <h1 className=" p-2 absolute top-35 md:top-50 text-white text-4xl md:text-8xl font-bold pt-16 ">Consumable Goods</h1>

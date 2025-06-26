@@ -49,7 +49,7 @@ export default function Vehicles() {
       <div id="navbar">
         <Navbar />
       </div>
-      <div className="p-2 md:p-4">
+      <div className=" mt-35 md:mt-20 p-2 md:p-4">
         <div className="w-full h-64 md:h-[400px] bg- ">
           <video ref={videoRef} src={AutoVideo} autoPlay muted playsInline loop className=" w-full h-full object-cover" />
           <h1 className="p-2 md:p-4 absolute md:top-70 top-40 text-white text-2xl md:text-6xl font-bold pt-16 ">AutoMobiles</h1>

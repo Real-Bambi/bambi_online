@@ -37,7 +37,7 @@ export default function AllProducts() {
   return (
     <div>
       <Navbar />
-      <div className="mt-35 md:mt-30 text-4xl font-bold">
+      <div className="mt-35 md:mt-20">
 
         <div className=" w-full h-64 md:h-[400px] p-4 ">
                  <video ref={videoRef} src={AllVideo} autoPlay muted playsInline loop className="  w-full h-full object-cover" />

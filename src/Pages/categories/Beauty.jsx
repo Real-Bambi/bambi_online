@@ -45,7 +45,7 @@ export default function Beauty() {
       <div id="navbar">
         <Navbar />
       </div>
-      <div className="p-6">
+      <div className="p-6 mt-35 md:mt-20">
         <div className=" w-full h-64 md:h-[400px] ">
           <video ref={videoRef} src={BeauVideo} autoPlay muted playsInline loop className="  w-full h-full object-cover" />
           <h1 className=" p-4 absolute top-40 md:top-50 text-white text-2xl  md:text-8xl font-bold pt-16 ">Beauty and Care</h1>
