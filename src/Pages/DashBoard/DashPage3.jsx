@@ -3,7 +3,7 @@ import SideBar from "../../components/SideBar"
 import AddProduct from "../../components/AddProduct";
 import EditProduct from "../../components/EditProduct";
 import useSWR from "swr";
-import { apiFetcher } from "../../api/client";
+import { apiFetcher , apiClient } from "../../api/client";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { ScaleLoader } from "react-spinners";
@@ -32,7 +32,6 @@ export default function DashPage3() {
   }
 
 
- 
   return (
     <>
       <SideBar />
@@ -79,6 +78,7 @@ export default function DashPage3() {
                 <th className="p-3">Price</th>
                 <th className="p-3">Date Created</th>
                 <th className="p-3">Action</th>
+                <th className="p-3">Action</th>
               </tr>
             </thead>
 
@@ -91,6 +91,7 @@ export default function DashPage3() {
                   <td className="border px-4 py-2">Gh{advert.price}</td>
                   <td className="border px-4 py-2">{advert.createdAt}</td>
                   <td><Link to={`/edit-product?id=${advert.id}`}><button className="border bg-[#FF8259] text-white font-semibold rounded-lg px-5 py-2 ml-2 hover:bg-amber-600">Edit</button></Link></td>
+                  <td><button  className="border bg-[#FF8259] text-white font-semibold rounded-lg px-3 py-2 shadow-md hover:bg-amber-600">Delete Book</button></td>
                 </tr>
               ))}
             </tbody>

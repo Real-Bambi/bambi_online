@@ -47,9 +47,9 @@ export default function EditProduct() {
         <>
             <div className="bg-cover bg-center h-[100vh] overflow-hidden" style={{ backgroundImage: `url(${Log})` }}>
                 <div className="absolute w-full mx-auto h-full" style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}>
-                <form action={putProduct} className="text-white rounded-lg shadow-md border border-solid border-gray-300  py-6 px-10 flex flex-col  h-[80vh] lg:h-[90vh] mt-15 lg:my-10 z-40 lg:w-1/2 w-[90%] mx-auto justify-center " >
+                <form action={putProduct} className="text-white rounded-lg shadow-md border border-solid border-gray-300  py-6 px-10 flex flex-col  h-[90vh] lg:h-[90vh] mt-15 lg:my-10 z-40 lg:w-1/2 w-[90%] mx-auto justify-center " >
 
-                    <div className="text-3xl font-bold m-auto text-[#FE5D26] border bg-transparent rounded-2xl px-4 py-2"><h1>Change An Advert</h1></div>
+                    <div className="text-3xl font-bold m-auto text-[#FE5D26]  bg-transparent rounded-2xl px-4 py-2"><h1>Change An Advert</h1></div>
 
                     <div className="flex flex-col px-2 py-2 ">
                         <label htmlFor="type" className="font-medium" >Product Title</label>
