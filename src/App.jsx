@@ -40,7 +40,7 @@ const onlineRouter = createBrowserRouter([
   { path: '/beauty', element: <Beauty /> },
   { path: '/animals', element: <Animals /> },
   { path: '/cart', element: <Cart /> },
-  { path: '*', element: <NotFound /> }
+  { path: '*', element: <NotFound /> },
 ])
 function App() {
 
