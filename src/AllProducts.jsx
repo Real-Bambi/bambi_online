@@ -7,10 +7,14 @@ import { apiFetcher } from "./api/client";
 import useSWR from "swr";
 import { ScaleLoader } from "react-spinners";
 import ProductCard from "./components/ProductCard";
+import AllVideo from './assets/videos/all.mp4';
+import { useRef } from "react";
 
 
 
 export default function AllProducts() {
+
+   const videoRef = useRef();
   const { data, isLoading, error } = useSWR("/adverts", apiFetcher);
   console.log(data)
 
@@ -34,6 +38,11 @@ export default function AllProducts() {
     <div>
       <Navbar />
       <div className="mt-35 md:mt-30 text-4xl font-bold">
+
+        <div className=" w-full h-64 md:h-[400px] p-4 ">
+                 <video ref={videoRef} src={AllVideo} autoPlay muted playsInline loop className="  w-full h-full object-cover" />
+                 <h1 className=" p-4 absolute top-60 md:top-80 text-white text-4xl  md:text-7xl font-bold pt-16 ">View Products</h1>
+               </div>
         <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 my-6 px-4">
           <div>
             <h2 className="text-xl">Browse Categories</h2>
@@ -58,7 +67,7 @@ export default function AllProducts() {
           </Link>
         </div>
 
-        <h1 className="p-4">All products</h1>
+      
       </div>
     <div className="grid mx-4 md:grid-cols-4 gap-4  md:w-full">
         {data.adverts.map(advert => <ProductCard key={advert.id} advert={advert} />)}
