@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router";
 import { useState } from "react";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, ArrowBigLeftDash } from "lucide-react";
 import { apiClient } from '../api/client';
 import Log from "../assets/images/log.png";
 
@@ -20,8 +20,8 @@ export default function Login() {
             }
          });
          console.log(response);
-         navigate('/');
          localStorage.setItem('ACCESS_TOKEN', response.data.token);
+         navigate('/');
 
 
       } catch (error) {
@@ -43,7 +43,7 @@ export default function Login() {
             <div className="w-full md:w-1/2 h-full p-8 flex flex-col justify-center bg-white bg-opacity-80 backdrop-blur-sm text-black">
                <h2 className="text-2xl font-semibold text-center mb-6">Have an account?</h2>
 
-               <form onSubmit={loginUser} className="space-y-4">
+               <form action={loginUser} className="space-y-4">
                   <input type="text" name="email" placeholder="Email" className="w-full px-4 py-2 rounded-full border border-orange-500 bg-white bg-opacity-40 backdrop-blur-sm text-black placeholder-black focus:outline-none focus:ring-orange-500" />
 
                   <div className="relative">
@@ -69,6 +69,8 @@ export default function Login() {
 
                   <div className="text-center mt-6 mb-2 text-sm">
                      — Not a member? <Link to="/" className="hover:underline font-bold">Sign up</Link> —
+                     <div className="flex justify-center p-4"><ArrowBigLeftDash className="text-[#FE5D26] font-extrabold size-8 animate-bounce" /> <span className="font-bold text-blue-900">Home</span>
+                     </div>
                   </div>
                </form>
             </div>

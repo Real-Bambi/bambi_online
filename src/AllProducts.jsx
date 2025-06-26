@@ -20,7 +20,7 @@ export default function AllProducts() {
 
   if (isLoading) {
     return (
-      <div className="grid sm:grid-cols-2 md:grid-cols-4justify-center items-center h-screen">
+      <div className="grid sm:grid-cols-2 md:grid-cols-4 justify-center items-center h-screen">
         <ScaleLoader size={100} color="#FE5D26"   />
       </div>
     );

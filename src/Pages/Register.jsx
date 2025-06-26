@@ -130,7 +130,7 @@ export default function Register() {
 
                   <div className="text-sm font-semibold mt-4 flex items-center">
                      <input type="checkbox" id="agree" name="terms" />
-                     <label htmlFor="agree" className="ml-2">I agree to the terms and conditions</label>
+                     <label htmlFor="agree" className="ml-2 text-[#084777]">I agree to the terms and conditions</label>
                   </div>
 
                   <button className="w-full bg-[#FE5D26] text-white font-bold py-3 hover:bg-orange-500 cursor-pointer rounded-3xl mt-2">Sign up

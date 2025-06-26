@@ -20,7 +20,7 @@ export default function Navbar() {
     };
 
     const Categories = [
-        " ",
+       
         "fashion",
         "animals",
         "allproducts",
@@ -65,7 +65,8 @@ export default function Navbar() {
                     <div className="flex-1 hidden md:flex items-center gap-2 mx-6">
                         <select onChange={handleChange}
                             className="bg-white border border-[#fe5d26] text-black text-sm px-3 py-2 rounded-md">
-                            <option disabled selected>All</option>
+                            <option disabled selected>Categories</option>
+                            <option value={"/allproducts"}>All</option>
                             <option value={"/fashion"}>Fashion</option>
                             <option value={"/animals"}>Animal</option>
                             <option value={"/beauty"}>Beauty</option>
@@ -93,9 +94,9 @@ export default function Navbar() {
 
                     <div className="flex items-center gap-4">
 
-                        <div className="cursor-pointer" title="Cart">
+                        <Link to={'/cart'} className="cursor-pointer" title="Cart">
                             <img src={cart} alt="Cart" className="h-6 w-6" />
-                        </div>
+                        </Link>
 
 
                         <div className="relative">

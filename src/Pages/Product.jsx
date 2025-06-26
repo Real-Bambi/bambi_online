@@ -7,6 +7,7 @@ import { apiFetcher } from "../api/client";
 import { BeatLoader } from "react-spinners";
 import { useSearchParams, Link } from "react-router";
 
+
 export default function Product() {
   const [activeTab, setActiveTab] = useState("description");
   const [selectedSize, setSelectedSize] = useState("M");
@@ -31,13 +32,7 @@ export default function Product() {
     <>
       <Navbar />
 
-      <Link
-        to={-1}
-        className="fixed top-24 left-4 bg-[#fe5d26] hover:bg-black text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-50"
-        title="Go Back"
-      >
-        ←
-      </Link>
+     
 
       <div className="max-w-7xl mx-auto px-4 py-30 space-y-16 text-black">
 
@@ -119,9 +114,10 @@ export default function Product() {
             </div>
 
             <div className="flex gap-10 pt-2">
-              <button className="bg-[#fe5d26] hover:bg-black text-white px-6 py-2 rounded-md text-sm font-medium transition">
+              <Link to={'/cart'}><button className="bg-[#fe5d26] hover:bg-black text-white px-6 py-2 rounded-md text-sm font-medium transition">
                 Add to Cart
-              </button>
+              </button></Link>
+
               <button className="border border-[#fe5d26] text-[#fe5d26] hover:bg-[#fe5d26] hover:text-white px-6 py-2 rounded-md text-sm font-medium transition">
                 Buy Now
               </button>
@@ -153,6 +149,14 @@ export default function Product() {
             {activeTab === "shipping" && <p>Shipping info and return policy will go here.</p>}
           </div>
         </div>
+
+         <Link
+        to={-1}
+        className="fixed top-24 left-4 bg-[#fe5d26] hover:bg-black text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-50"
+        title="Go Back"
+      >
+        ←
+      </Link>
 
         {/* Related Products */}
         <div>
