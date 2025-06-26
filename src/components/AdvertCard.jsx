@@ -33,8 +33,6 @@ export default function ProductCard({ advert }) {
                 <div className='flex flex-row justify-between pt-2 '>
                     <p className='font-bold'>GH₵{advert.price}.00</p>
                 </div>
-
-                <div className='pt-4 text-lg'> <span className='font-bold'>Vendor:</span><span className='text-orangelight'> {advert.vendor.username}</span></div>
                 <span
                     id="heart"
 

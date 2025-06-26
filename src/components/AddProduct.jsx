@@ -1,5 +1,6 @@
 import { apiClient, } from "../api/client";
 import { useNavigate } from "react-router";
+import Log from "../assets/images/log.png"
 
 
 export default function AddProduct({ onClose }) {
@@ -9,7 +10,7 @@ export default function AddProduct({ onClose }) {
     const postProduct = async (data) => {
 
         try {
-            const response = await apiClient.post("/adverts/my-adverts", data, {
+            const response = await apiClient.post("/adverts", data, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
                 }
@@ -25,22 +26,26 @@ export default function AddProduct({ onClose }) {
 
 
     return (
+
         <>
-            <form action={postProduct} className="bg-white rounded-lg shadow-md border border-gray-300  py-6 px-10 flex flex-col mx-auto  w-full h-[100vh] mt-4">
-                <div className="text-3xl font-bold m-auto"><h1>Add Product</h1></div>
+           <div className="bg-cover bg-center h-[100vh] overflow-hidden" style={{ backgroundImage: `url(${Log})` }}>
+            <div className="absolute inset-0 w-full mx-auto h-full" style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}> 
+            <form action={postProduct} className="text-white rounded-lg shadow-md border border-solid border-gray-300  py-6 px-10 flex flex-col  h-[80vh] lg:h-[90vh] mt-15 lg:my-10 z-40 lg:w-1/2 w-[90%] mx-auto justify-center " >
+                 
+                <div className="text-3xl font-bold m-auto text-[#FE5D26] border bg-transparent rounded-2xl px-4 py-2"><h1>Create An Advert</h1></div>
 
                 <div className="flex flex-col px-2 py-2 ">
-                    <label htmlFor="type"  >Product Title</label>
+                    <label htmlFor="type" className="font-medium" >Product Title</label>
                     <input type="text" required name="title" id="productname" placeholder="Enter Product Title" className="  border p-2 rounded-md" />
                 </div>
                 <div className="flex flex-col px-2 py-2">
-                    <label htmlFor="type">Products's Price</label>
+                    <label htmlFor="type" className="font-medium" >Products's Price</label>
                     <input type="text" required name="price" placeholder="Enter Product's Price" className=" p-2 rounded-md border" />
                 </div>
             
 
                 <div className="flex flex-col px-2 py-2">
-                    <label htmlFor="type">Product Image</label>
+                    <label htmlFor="type" className="font-medium" >Product Image</label>
                     <input type="file" required name="image" placeholder="Enter Product Image" className=" p-2 rounded-md border" />
                 </div>
 
@@ -59,7 +64,7 @@ export default function AddProduct({ onClose }) {
 
                 <div className="flex flex-col px-2 py-2">
 
-                    <label htmlFor="type">Description</label>
+                    <label htmlFor="type" className="font-medium" >Description</label>
                     <textarea required name="description" placeholder="Enter Product Description" className=" p-2  pb-20 rounded-md border " />
                 </div>
 
@@ -68,13 +73,15 @@ export default function AddProduct({ onClose }) {
                         <button type="submit" className="border rounded-2xl bg-[#FE5D26] px-4 py-2">Add Product</button>
                     </div>
 
-                    <div>
+                    <div className="hidden lg:block">
                         <button
                             onClick={onClose}
                             className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">Cancel</button>
                     </div>
                 </div>
             </form>
+            </div>
+            </div>
         </>
 
     )
