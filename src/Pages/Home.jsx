@@ -7,7 +7,10 @@ import { Link } from "react-router";
 import Fashion from '../assets/images/fashion.jpg';
 import Equipment from '../assets/images/equipment.jpg';
 import Makeup from '../assets/images/makeup.jpg';
-import { useState } from "react";
+import Puppy from '../assets/images/puppy.jpg';
+import Consumables from '../assets/images/consumables.jpg';
+import Posh from '../assets/images/posh.jpg';
+import { useState } from 'react';
 import useSWR from "swr";
 import { ScaleLoader } from "react-spinners";
 import { apiFetcher } from "../api/client";
@@ -16,7 +19,6 @@ import ErrorImage from '../assets/images/error1.png';
 
 export default function Home() {
 
-  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
 
@@ -38,6 +40,10 @@ export default function Home() {
     )
   }
 
+  
+
+
+ 
 
   return (
     <div>
@@ -48,7 +54,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
 
           <div>
-            <h2 className="text-lg md:text-xl font-semibold">Reliable Imports & Exports between China and Ghana</h2>
+            <h2 className="text-lg md:text-xl font-s emibold">Reliable Imports & Exports between China and Ghana</h2>
             <p className="text-sm md:text-base text-cyan-100 mt-2">
               Explore quality electronics, fashion, home goods, and more — safe logistics at competitive rates.
 
@@ -67,8 +73,8 @@ export default function Home() {
 
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4 bg-black/50">
           <h1 className="text-3xl md:text-5xl font-bold tracking-wider">Welcome to <span className="text-[#FE5D26]">Bambi Online</span></h1>
-          <p className="text-base md:text-xl font-bold italic tracking-wide mt-4 mb-2 max-w-xl">
-            Find What You Need <br className="hidden md:block" />Post What You Sell
+          <p className="text-base md:text-xl font-bold italic leading-8 tracking-wide mt-4 mb-2 max-w-xl">
+            Connecting Ghana & China <br className="hidden md:block" />Your Gateway to Global Trade
           </p>
           <Link to="/allproducts"><button className="mt-4 bg-white text-black font-medium px-6 py-2 rounded-full hover:bg-gray-300 transition">
             Shop Now
@@ -100,29 +106,26 @@ export default function Home() {
           <div className="flex-1 flex justify-center gap-4 overflow-x-auto md:overflow-visible text-[#FE5D26]  animate-scroll whitespace-nowrap">
 
             <div className="flex flex-col items-center">
-              <Link to="/fashion"><img src={Fashion} alt="Fashion" className="w-24 h-36 object-cover rounded shadow hover:scale-105 duration-300 transition-transform" />
+              <Link to="/fashion"><img src={Fashion} alt="Fashion" className="w-24 h-36 object-cover rounded shadow hover:scale-110 duration-300 transition-transform" />
                 <span className="mt-2 text-sm font-bold">Fashion ›</span></Link>
             </div>
             <div className="flex flex-col items-center">
-              <Link to="/Equipment"><img src={Equipment} alt="Equipment" className="w-24 h-36 object-cover rounded shadow hover:scale-105 duration-300 transition-transform" />
+              <Link to="/Equipment"><img src={Equipment} alt="Equipment" className="w-24 h-36 object-cover rounded shadow hover:scale-110 duration-300 transition-transform" />
                 <span className="mt-2 text-sm font-bold">Equipment ›</span></Link>
             </div>
             <div className="flex flex-col items-center">
-              <Link to="/beauty"><img src={Makeup} alt="Makeup" className="w-24 h-36 object-cover rounded shadow hover:scale-105 duration-300 transition-transform" />
+              <Link to="/beauty"><img src={Makeup} alt="Makeup" className="w-24 h-36 object-cover rounded shadow hover:scale-110 duration-300 transition-transform" />
                 <span className="mt-2 text-sm font-bold">Makeup ›</span></Link>
             </div>
+            <div className="flex flex-col items-center">
+              <Link to="/animals"><img src={Puppy} alt="Puppy" className="w-24 h-36 object-cover rounded shadow hover:scale-110 duration-300 transition-transform" />
+                <span className="mt-2 text-sm font-bold">Animals & Care ›</span></Link>
+            </div>
+
           </div>
         </div>
 
 
-        <div className="mt-8 flex justify-center gap-2">
-          <span className="w-2 h-2 bg-white rounded-full"></span>
-          <span className="w-2 h-2 bg-white/50 rounded-full"></span>
-          <span className="w-2 h-2 bg-white/50 rounded-full"></span>
-
-
-
-        </div>
       </section>
 
 

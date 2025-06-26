@@ -68,8 +68,8 @@ export default function Login() {
                   </div>
 
                   <div className="text-center mt-6 mb-2 text-sm">
-                     — Not a member? <Link to="/" className="hover:underline font-bold">Sign up</Link> —
-                     <div className="flex justify-center p-4"><ArrowBigLeftDash className="text-[#FE5D26] font-extrabold size-8 animate-bounce" /> <span className="font-bold text-blue-900">Home</span>
+                     — Not a member? <Link to="/register" className="hover:underline font-bold">Sign up</Link> —
+                     <div className="flex justify-center p-4"> <Link to="/"><ArrowBigLeftDash className="text-[#FE5D26] font-extrabold size-8 animate-bounce" /></Link> <span className="font-bold text-blue-900">Home</span>
                      </div>
                   </div>
                </form>
