@@ -68,15 +68,15 @@ export default function AddProduct({ onClose }) {
                     <textarea required name="description" placeholder="Enter Product Description" className=" p-2  pb-20 rounded-md border " />
                 </div>
 
-                <div className="mt-1 flex flex-row gap-x-40 px-10">
+                <div className="mt-1 flex flex-row gap-x-40 p-10">
                     <div >
-                        <button type="submit" className="border rounded-2xl bg-[#FE5D26] px-4 py-2">Add Product</button>
+                        <button type="submit" className="border rounded-xl bg-[#FE5D26] px-2 py-2">Add Product</button>
                     </div>
 
                     <div className="hidden lg:block">
                         <button
                             onClick={onClose}
-                            className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">Cancel</button>
+                            className="px-2 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">Cancel</button>
                     </div>
                 </div>
             </form>
