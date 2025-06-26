@@ -87,9 +87,9 @@ export default function Footer() {
         {/* Quick Links */}
         <div className="flex flex-col gap-3">
           <h3 className="font-bold text-[26px] text-[#fe5d26]">Quick Links</h3>
-          <Link><span className="hover:underline hover:text-[#fe5d26]">Home</span></Link>
-          <Link><span className="hover:underline hover:text-[#fe5d26]">Shop</span></Link>
-          <Link><span className="hover:underline hover:text-[#fe5d26]">Login/Register</span></Link>
+          <Link to={'/'}><span className="hover:underline hover:text-[#fe5d26]">Home</span></Link>
+          <Link to={'/allproducts'}><span className="hover:underline hover:text-[#fe5d26]">Shop</span></Link>
+          <Link to={'/register'}><span className="hover:underline hover:text-[#fe5d26]">Login/Register</span></Link>
           <Link><span className="hover:underline hover:text-[#fe5d26]">My Orders</span></Link>
           <Link><span className="hover:underline hover:text-[#fe5d26]">Deals</span></Link>
           <Link><span className="hover:underline hover:text-[#fe5d26]">Contact Us</span></Link>
@@ -127,12 +127,12 @@ export default function Footer() {
           <div className="pt-5">
             <h3 id="follow-title" className="font-bold text-[22px] text-[#fe5d26]">Follow Us</h3>
             <div className="flex gap-4 mt-2">
-              <Link to="#https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                 <img src={facebookIcon} alt="facebook" className="h-6 w-6 hover:scale-110 transition" />
-              </Link>
-              <Link><img src={twitterIcon} alt="twitter" className="h-6 w-6 hover:scale-110 transition" /></Link>
-              <Link><img src={igIcon} alt="instagram" className="h-6 w-6 hover:scale-110 transition" /></Link>
-              <Link><img src={whatsappIcon} alt="whatsapp" className="h-6 w-6 hover:scale-110 transition" /></Link>
+              </a>
+              <a href="https://www.x.com" target="_blank" rel="noopener noreferrer"><img src={twitterIcon} alt="twitter" className="h-6 w-6 hover:scale-110 transition" /></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><img src={igIcon} alt="instagram" className="h-6 w-6 hover:scale-110 transition" /></a>
+              <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer"><img src={whatsappIcon} alt="whatsapp" className="h-6 w-6 hover:scale-110 transition" /></a>
             </div>
           </div>
         </div>

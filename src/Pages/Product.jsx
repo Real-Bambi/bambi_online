@@ -7,6 +7,7 @@ import { apiFetcher } from "../api/client";
 import { BeatLoader } from "react-spinners";
 import { useSearchParams, Link } from "react-router";
 
+
 export default function Product() {
   const [activeTab, setActiveTab] = useState("description");
   const [selectedSize, setSelectedSize] = useState("M");
@@ -113,9 +114,10 @@ export default function Product() {
             </div>
 
             <div className="flex gap-10 pt-2">
-              <button className="bg-[#fe5d26] hover:bg-black text-white px-6 py-2 rounded-md text-sm font-medium transition">
+              <Link to={'/cart'}><button className="bg-[#fe5d26] hover:bg-black text-white px-6 py-2 rounded-md text-sm font-medium transition">
                 Add to Cart
-              </button>
+              </button></Link>
+
               <button className="border border-[#fe5d26] text-[#fe5d26] hover:bg-[#fe5d26] hover:text-white px-6 py-2 rounded-md text-sm font-medium transition">
                 Buy Now
               </button>
