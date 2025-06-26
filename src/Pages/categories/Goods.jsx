@@ -48,7 +48,7 @@ export default function Goods() {
       <div className=" mt-35 md:mt-20 p-4">
         <div className=" w-full h-64 md:h-[400px] ">
           <video ref={videoRef} src={GoodsVideo} autoPlay muted playsInline loop className="  w-full h-full object-cover" />
-          <h1 className=" p-2 absolute top-35 md:top-50 text-white text-4xl md:text-8xl font-bold pt-16 ">Consumable Goods</h1>
+          <h1 className=" p-2 absolute top-65 md:top-70 text-white text-4xl md:text-8xl font-bold pt-16 ">Consumable Goods</h1>
         </div>
         <form action="" className=" flex items-center gap-2 md:flex-row p-4 md:p-6 md:items-center md:justify-around bg-white ">
           <h1 className="font-bold text-xl">Sort By:</h1>            <ChevronDown onClick={toggleFilters} className=" md:hidden" />

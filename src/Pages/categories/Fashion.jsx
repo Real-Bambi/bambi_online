@@ -52,7 +52,7 @@ export default function Fashion() {
       <div className=" mt-35 md:mt-20 p-4">
         <div className=" w-full h-64 md:h-[400px] ">
           <video ref={videoRef} src={FashVideo} autoPlay muted playsInline loop className="  w-full h-full object-cover" />
-          <h1 className=" p-2 absolute top-35 md:top-50 text-white text-4xl md:text-8xl font-bold pt-16 ">Fashion</h1>
+          <h1 className=" p-2 absolute top-70 md:top-70 text-white text-3xl md:text-8xl font-bold pt-16 ">Fashion</h1>
         </div>
         <form action="" className=" flex items-center gap-2 md:flex-row p-4 md:p-6 md:items-center md:justify-around bg-white ">
           <h1 className="font-bold text-xl">Sort By:</h1>            <ChevronDown onClick={toggleFilters} className=" md:hidden" />
@@ -77,7 +77,7 @@ export default function Fashion() {
 
         </form>
 
-        <div className=" flex items-center justify-center">
+        <div className=" grid mx-4 md:grid-cols-4 ">
           {data?.adverts?.map(advert => <ProductCard key={advert.id} advert={advert} />)}
         </div>
         <div className="fixed right-0.5 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orangelight rounded-full w-12 h-12 flex items-center justify-center text-white font-semibold">
