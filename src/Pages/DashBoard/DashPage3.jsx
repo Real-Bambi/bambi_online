@@ -6,23 +6,25 @@ import useSWR from "swr";
 import { apiFetcher } from "../../api/client";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { ScaleLoader } from "react-spinners";
+import Log from "../../assets/images/log.png"
 
 
 export default function DashPage3() {
   const [page, setPage] = useState();
-  const [isOpen, setOpen] = useState(false);
-  const [isEnter, setEnter] = useState(false);
   const navigate = useNavigate();
+  
 
   // To Collect Data for the table
   const { data, isLoading, error } = useSWR("/adverts/my-adverts", apiFetcher);
 
   if (isLoading) {
     return (
-      <div className="p-4 text-gray-600">Loading adverts...</div>
-    );
-  }
-
+            <div className="flex justify-center items-center h-screen">
+                <ScaleLoader size={100} color="#FE5D26" />
+            </div>
+        );
+    }
   if (error) {
     return (
       <div className="p-4 text-gray-600"><p>Something is Wrong</p></div>
@@ -30,32 +32,17 @@ export default function DashPage3() {
   }
 
 
-  // To handle the modal for the Add Product
-  if (isOpen) {
-    return (
-      <div className="w-1/2 mx-auto flex justify-center items-center backdrop-opacity-95">
-        <AddProduct />
-      </div>
-    );
-  }
-
-  // to handle the madal for the edit product
-  if (isEnter) {
-    return (
-      <div className="fixed inset-0 flex justify-center items-center bg-opacity-50 ">
-        <EditProduct />
-      </div>
-    )
-  }
-
+ 
   return (
     <>
       <SideBar />
-      <div className="bg-gray-100 h-[100vh]">
-        <div className="my-5 ml-[25%] w-[70%]">
+      <div className="bg-gray-100 h-[100vh] overflow-y-hidden">
+        <div className="my-5 ml-[25%] w-[70%] ">
           <p className="text-5xl font-bold pb-5">Manage Products</p>
           <div className="flex justify-end mb-5">
-            <button className="border bg-amber-500 text-white font-semibold rounded-lg px-5 py-2 shadow-md hover:bg-amber-600" onClick={() => setOpen(true)}>Add Product</button></div>
+           <Link
+            to={"/add-product"}>
+            <button className="border bg-[#FF8259] text-white font-semibold rounded-lg px-5 py-2 shadow-md hover:bg-amber-600" >Add Product</button></Link> </div>
           <div className="flex flex-row justify-between pb-5">
             <input
               type="search" placeholder="Search products" name=""
@@ -100,12 +87,10 @@ export default function DashPage3() {
                 <tr key={index} className="hover:bg-gray-50">
                   <td className="p-3"><input type="checkbox" /></td>
                   <td className="border px-4 py-2">{advert.title}</td>
-                  <td className="border px-4 py-2">{advert.description}</td>
-                  <td className="border px-4 py-2">${advert.price}</td>
+                  <td className="border px-4 py-2">{advert.category}</td>
+                  <td className="border px-4 py-2">Gh{advert.price}</td>
                   <td className="border px-4 py-2">{advert.createdAt}</td>
-                  <td><button className="border bg-amber-500 rounded-2xl px-4 py-2 mb-5 mx-6" onClick={() => {
-                    navigate(`/edit-product?id=${advert.id}`)
-                  }}>Edit</button></td>
+                  <td><Link to={`/edit-product?id=${advert.id}`}><button className="border bg-[#FF8259] text-white font-semibold rounded-lg px-5 py-2 ml-2 hover:bg-amber-600">Edit</button></Link></td>
                 </tr>
               ))}
             </tbody>
