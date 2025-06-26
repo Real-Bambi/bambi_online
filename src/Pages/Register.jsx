@@ -59,7 +59,7 @@ export default function Register() {
                         className={`flex-1 bg-white ${selectedRole === "user" ? "hover:bg-orange-100" : "hover:bg-[#eaf3fa]"} cursor-pointer border-2 ${selectedRole === "user" ? "border-[#FE5D26]" : "border-[#B2C6D5]"} rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300`} >
 
                         <User className={`w-10 h-10 ${selectedRole === "user" ? "text-[#FE5D26]" : "text-[#a4b8c7]"} mb-2`} />
-                        <span className="text-lg font-semibold">User</span>
+                        <span className="text-lg font-semibold">Vendor</span>
                         <input type="radio" name="role" value="user" checked={selectedRole === "user"} readOnly />
                      </button>
 
@@ -68,7 +68,7 @@ export default function Register() {
                         className={`flex-1 bg-white ${selectedRole === "vendor" ? "hover:bg-orange-100" : "hover:bg-[#eaf3fa]"} cursor-pointer border-2 ${selectedRole === "vendor" ? "border-[#FE5D26]" : "border-[#B2C6D5]"} rounded-2xl p-6 flex flex-col items-center shadow-md transition duration-300`} >
 
                         <Store className={`w-10 h-10 ${selectedRole === "vendor" ? "text-[#FE5D26]" : "text-[#a4b8c7]"} mb-2`} />
-                        <span className="text-lg font-semibold">Vendor</span>
+                        <span className="text-lg font-semibold">User</span>
                         <input type="radio" name="role" value="vendor" checked={selectedRole === "vendor"} readOnly />
                      </button>
 
